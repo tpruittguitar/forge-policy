@@ -20,7 +20,7 @@ jobs:
           python3 - <<'PY'
           import json, os, re, subprocess
           commits = json.loads(os.environ["COMMITS"] or "[]")
-          ok = re.compile(r"^(CLAUDE|TIM)\b|^Merge pull request #\d+")
+          ok = re.compile(r"^(CLAUDE|TIM)\b|^Merge pull request #\d+|^[^\n]*\(#\d+\)\s*(\n|$)")
           bad = [c for c in commits if not ok.match(c["message"])]
           if not bad:
               print("All commits labeled."); raise SystemExit
