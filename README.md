@@ -9,6 +9,7 @@ Live policy source from 2026-10-17 (Stage 3 of `FORGE_PLAN_GitHub_Migration_2026
 | `rules/TIM_PIPELINE_RULES_CANONICAL.txt` | Canonical pipeline rules: core, URL, discovery, Never-Consider, compensation and geo floors, degree/FLEX, ownership, title, states, decline codes, protected states, Writer and reporting rules, and the Target Companies registry (`SECTION=TARGET_COMPANIES`) | Writer (intake, FLEX, Never-Consider), Pipeline Explorer (Rules and Target Companies screens, culture score), every AI lane |
 | `scoring/PIPELINE_SCORING_MODEL.json` | Published weighted job rating model (weights, geo control points, salary curve) | Writer, Pipeline Explorer, AI lanes |
 | `directives/WRITER_ACCESS_DIRECTIVE_V9_2026-10-02.txt` | How AI lanes reach the Writer | AI lanes |
+| `derived/TARGET_COMPANIES_PRIORITY.txt` | Generated digest of the Target Companies registry by priority tier (Action `target-companies-digest` rebuilds it on every rules change; never edit by hand) | Discovery lanes |
 
 Edit the rules and Target Companies through the Pipeline Explorer when possible: its save re-reads the file, passes the blob SHA (a concurrent change is refused, never overwritten), commits with a `TIM` message and reads the result back.
 

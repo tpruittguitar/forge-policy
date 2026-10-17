@@ -1,0 +1,26 @@
+# Regenerates derived/TARGET_COMPANIES_PRIORITY.txt whenever the canonical rules change, so discovery lanes
+# read a small digest and the registry stays the only copy of the list. Pushes made with the workflow token
+# do not trigger other workflows, so this cannot loop or fire the unreviewed-push alarm.
+name: target-companies-digest
+on:
+  push:
+    branches: [main]
+    paths: ['rules/TIM_PIPELINE_RULES_CANONICAL.txt', 'tools/target_companies_digest.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build digest
+        run: python3 tools/target_companies_digest.py rules/TIM_PIPELINE_RULES_CANONICAL.txt derived/TARGET_COMPANIES_PRIORITY.txt "$(git rev-parse --short HEAD)"
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- derived/; then echo "digest unchanged"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add derived/TARGET_COMPANIES_PRIORITY.txt
+          git commit -m "ACTION target-companies-digest: regenerate from rules $(git rev-parse --short HEAD)"
+          git push
