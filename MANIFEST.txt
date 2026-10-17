@@ -1,0 +1,8 @@
+MANIFEST - policy files copied from Google Drive to forge-policy (Stage 3, 2026-10-17)
+COPIED_BY=Claude per Tim (chat 2026-10-17 18:11 ET: "Move it all over to GitHub. Add and correct the code and lists. And update the app and ai coordination accordingly")
+Format: path | Drive source | how copied | sha256 of the first GitHub copy (before any later edit)
+rules/TIM_PIPELINE_RULES_CANONICAL.txt | Google Doc 1uuIopBY2Et-leu_tOdxnWAJJLniKwk08rdLCypuM2BE | Drive text/plain export, UTF-8 BOM removed, CRLF converted to LF, text otherwise unchanged | 7acb3aabe84011c87dc9f1ca2bca451d88edecc956ef658ff52ec08ddacd480d
+scoring/PIPELINE_SCORING_MODEL.json | text file 18l2Gc_SQNK5oKIegPFWgxIqoiXei-vKh | byte-for-byte | 775a6b2069193d023d29e8f60f79b188f190ba5b0677d028745f81623c3caeed
+directives/WRITER_ACCESS_DIRECTIVE_V9_2026-10-02.txt | Google Doc 1VHxnJqmwlJxsW_-aXm0IJiBvmETIxktN9yQHl_Bf_Rw | Drive text/plain export, BOM removed, CRLF to LF | 8635d6914603fc3f26c06c933b62bd4ffe1cddfa65f6eb097edfe1872013e963
+Copy check (rules): a second independent Drive read (Docs reader) has identical letters and digits (46,004 alphanumeric characters, equal). The Writer's never-consider parser reads 4 rules, 4 active, status ACTIVE; the Pipeline Explorer's Target Companies parser reads 42 companies. Same results as the export before normalization.
+Later edits to these files are ordinary commits; git history is the change record.

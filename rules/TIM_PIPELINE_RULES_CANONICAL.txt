@@ -1,0 +1,431 @@
+TIM_PIPELINE_RULES_CANONICAL
+
+OWNER=Tim Pruitt
+
+STATUS=ACTIVE
+
+RULESET_VERSION=4
+POLICY_VERSION=RULES_V4_20261007
+TIM_LOCK_AT_ET=2026-10-07 22:06 ET
+MIGRATION_PREPARED=2026-10-02
+
+ACTIVATED_AT_ET=2026-10-02 01:03:31 ET
+
+SAVED_BY=TIM
+
+PURPOSE=Single canonical human-owned decision and operating guidance for the job-search pipeline.
+
+PRECEDENCE=ACTIVE CANONICAL RULESET. This document overrides conflicting older pipeline directives, prompts, amendments, task-board prose, cached rules, and AI memory. The canonical job master remains authoritative for row-specific facts, states, applications, and Tim decisions.
+
+SECTION=CORE_ARCHITECTURE
+
+- V2_CURRENT_POPULATION_MASTER.txt, Drive ID 1My9QYVPBblw8c7vFMFxGOAqgTSuH9gS8, is the one canonical job population.
+
+- No AI may create or maintain a second authoritative population, application ledger, ranking ledger, or side master.
+
+- Derived reports, rankings, queues, notes, event logs, and evidence files are supporting artifacts only.
+
+- Canonical row BUCKET/state and the latest successfully saved Tim decision control over stale copies or older reports.
+
+- Identity precedence for reconciliation: exact requisition/ATS ID first; then stable pipeline ID; then canonical source URL; then employer + title + location. Ambiguity fails closed to research/HOLD rather than guessing.
+
+- Never silently drop a legitimate discovery. Every surfaced item must end as canonical intake/existing match, a logged Never-Consider exclusion, or an explicit failed/held result.
+
+SECTION=URL_PROVENANCE
+
+- Every new master row must have a usable HTTP(S) initiating or company source URL. LinkedIn, Ladders, Indeed, email click-through, Teal, or ATS links qualify; first-party ATS is not a gate.
+
+- Preserve original INITIATING_URL. When the employer link is found, keep both INITIATING_URL and COMPANY_SOURCE_URL. SOURCE_URL is the usable working link. Emit the original link when company/ATS source is unconfirmed and label that status.
+
+- New records without a URL are held as SOURCE_URL_REQUIRED with visible accounting. Recover existing missing URLs from original intake/email evidence; never fabricate links or delete historical rows. Existing protected-state updates remain possible.
+
+SECTION=DISCOVERY_ADMISSION
+
+- Default action is ALLOW_INTAKE for a plausible specific job.
+
+- A new role is discoverable when company + title + worksite/remote status + source URL are reasonably identified and no protected same-identity row controls.
+
+- Unknown or incomplete compensation, FLEX, exact req ID, scope, reporting line, work arrangement, or first-party URL is a research state, not an exclusion reason.
+
+- LinkedIn and other credible job-board/aggregator JD text may establish a real role and may be used as the working JD with provenance.
+
+- First-party ATS is primarily a liveness/correction source, not a discovery gate.
+
+- If first-party evidence later contradicts an aggregator field, the stronger employer evidence controls that field and the contradiction is recorded.
+
+- Never decline or suppress solely because a role came from a recruiter, hidden client, aggregator, lacks a first-party ATS URL, or is Manager/Senior Manager.
+
+- Hidden-client roles may remain visible for client-name resolution; the wrapper itself is not a decline reason.
+
+- Fresh discovery continues every run; existing inventory or backlog size never substitutes for new discovery.
+
+- Dedupe must occur against all canonical states, including APPLIED, REJECTED_BY_EMPLOYER, DECLINED_BY_TIM, CLOSED_DEAD, DUPLICATE, READY_TO_PURSUE, SCOUT_INTAKE, and DISCOVERY_LEAD.
+
+SECTION=NEVER_CONSIDER
+
+DEFAULT_ACTION=ALLOW_INTAKE
+
+UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is never a hard exclusion.
+
+- NC-001 PHARMACEUTICAL_MANUFACTURER: exclude before intake only when the employer's core business is pharmaceutical drug development/manufacturing/commercial pharmaceutical production.
+
+- NC-002 MEDICAL_DEVICE_MANUFACTURER: exclude before intake only when the employer's core business is manufacturing/commercializing medical devices, medical equipment, surgical/diagnostic devices, or comparable regulated healthcare hardware.
+
+- NC-003 FOOD_OR_BEVERAGE_MANUFACTURER: exclude before intake only when the employer's core business is manufacturing, processing, packaging, or commercially producing food or beverage products.
+
+- NC-004 RESTAURANT_OR_FOOD_SERVICE: exclude before intake only when the employer's core business is restaurant, fast-food, quick-service, catering, food-service, or comparable consumer meal-service operations.
+
+- Do not apply NC rules merely because an industrial supplier, equipment maker, automation/integration firm, software vendor, logistics provider, component supplier, consulting firm, or engineering firm serves one of those industries.
+
+- Every Never-Consider exclusion must be logged in Scout run metrics with RULE_ID, company, title, location, source, source URL, confidence, and reason.
+
+- MED/LOW-confidence category matches are admitted as SCOUT_INTAKE or DISCOVERY_LEAD with NEVER_CONSIDER_REVIEW_NEEDED, not excluded.
+
+- Existing master rows are never deleted merely because an NC rule later applies.
+
+- Only Tim may activate, retire, edit, or override a Never-Consider category. Preserve retired RULE_IDs for historical metrics.
+
+SECTION=COMPENSATION_GEOGRAPHY
+
+HOME_PIN=Cleveland, Tennessee
+
+DISTANCE_METHOD=Driving miles, not straight-line distance.
+
+- BAND 1: CA, OR, WA plus CT, ME, MA, NH, NJ, NY, PA, RI, VT. Base-pay midpoint threshold = $400,000.
+
+- BAND 2: all MI, Chicago metro including NW Indiana, WI, MN. Base-pay midpoint threshold = $300,000.
+
+- Outside Bands 1/2: 0-150 driving miles = $180,000 base floor; 151-250 = $190,000; 251+ = $200,000.
+
+- Florida has a flat $210,000 base floor when it exceeds the normal ring.
+
+- Downstate Illinois is not Band 2 and uses the normal ring model.
+
+- Posted target-role base range is preferred. Midpoint = (low + high) / 2 where midpoint logic applies.
+
+- Base pay controls the floor. Bonus, equity, relocation, vehicle programs, and other package adders do not manufacture a base-floor pass.
+
+- Closer to home is a preference, not an automatic veto or artificial score bonus.
+
+- Manager/Senior Manager may remain viable when compensation and scope meet the applicable rule; title alone does not kill a role.
+
+- Pure first-line/group-leader/individual-contributor roles normally fall below target unless there is a documented leadership pathway and economics still work.
+
+- RETIRED THRESHOLDS must never be revived from old MCRs, prompts, reports, or AI memory. Examples include prior WC/NE $250k posted-low, WC/NE $300k, MI $250k, and MI $230k rules.
+
+- Volkswagen vehicle/insurance benefit baseline for offer/relocation comparisons = $17,900/year point estimate (~$1,492/month; reasonable range $17,800-$18,000/year).
+
+- If leaving VW requires buying two replacement vehicles, include the real financing/bad-credit impact in total-compensation comparisons.
+
+- Vehicle/package benefits are offer economics; they do not change the stated base-pay floor unless Tim explicitly creates a role-specific exception.
+
+SECTION=COMPENSATION_ESTIMATION
+
+- Perfect pay data is not required. Transparent uncertainty is required.
+
+- Source effort order: target employer/posting; employer-authored comparable role; credible pay-transparency/employer comparison; comparable company/title/scope/geography; role-specific recruiter/job-board claim; weaker market data only as sanity check.
+
+- Exact employer-posted target-role pay is VERIFIED, not an estimate.
+
+- One relevant numeric employer-posted comparable may support a provisional LOW-confidence estimate.
+
+- Two relevant numeric comparables, including at least one strong employer-posted band, may support a qualified estimate; LOW by default, MED when the role/geo match is close and corroboration is strong.
+
+- Three or more strong independent relevant anchors may support higher confidence under the same evidence logic.
+
+- If no clean numeric anchor exists but credible evidence still supports directional judgment, an ESTIMATED / LOW value may be used only when its basis and uncertainty are explicit.
+
+- Aggregator-only or unsupported legacy numbers do not become verified compensation and must not be recycled as fact.
+
+- Every estimate used for a disposition records: ESTIMATED flag, range/value, HIGH/MED/LOW confidence, sources attempted, evidence/anchors, key uncertainty, whether uncertainty could change the disposition, governing rule, AS-OF date, and verification note. Compensation estimates expire/review after approximately 30 days unless replaced by verified evidence.
+
+- A later verified value immediately supersedes an estimate.
+
+- Missing pay must not hide a real role or block the daily brief indefinitely. If decision-changing, keep it MANUAL_RESEARCH/VERIFY COMP. If decision-irrelevant, mark VERIFY_LATER and proceed.
+
+- Never estimate protected facts: exact requisition identity, APPLIED, REJECTED_BY_EMPLOYER, WITHDRAWN, CLOSED/DEAD, citizenship, security-clearance status, legal/work authorization, or whether a specific application was submitted.
+
+- If multiple plausible identities/worksites exist, do not average or invent them. If all plausible cases lead to the same disposition, the role may be processed while the identity/location remains VERIFY_LATER.
+
+SECTION=DEGREE_FLEX
+FLEX_POLICY_VERSION=RULES_V4_20261007
+HIGH_FLEX_MODIFIER=90
+SOFT_FLEX_MODIFIER=70
+NO_FLEX_MODIFIER=-60
+STRICT_MODIFIER=-100
+NOT_STATED_CLASS=HIGH_FLEX
+EQUIVALENCY_CLASS=HIGH_FLEX
+HARD_DEGREE_CLASS=NO_FLEX
+SINGLE_PATH_CLASS=STRICT
+FRESH_DEGREE_OVERRIDES_STALE_CLASS=YES
+FLEX_POLICY_PROSE_BEGIN
+- RULES_V4_20261007, Tim lock 2026-10-07 22:06 ET, supersedes RULES_V3. Class from the requirement text only; never invent equivalency. Values below are generated from the keys above; the keys govern.
+- A FLEX class Tim sets on a row is locked (TIM_FLEX_CLASS) and outranks text-derived classes until Tim changes it or sets UNKNOWN.
+- Degree not stated => HIGH_FLEX. Equivalent experience => HIGH_FLEX. Hard degree requirement without equivalency => NO_FLEX. Confirmed single required degree path => STRICT.
+- FLEX modifiers: HIGH_FLEX +90, SOFT_FLEX +70, NO_FLEX -60, STRICT -100.
+- SOFT_FLEX: degree listed with an alternate path that is not equivalent-experience language.
+- NO_FLEX: degree required without equivalency. Related field alone is not equivalency. Still pursue if adjusted fit is high and pay/title rules clear.
+- STRICT: degree required, no equivalency, single path only. Do not apply or mark APPLY NOW unless Tim explicitly overrides.
+- Equivalency triggers: or equivalent experience; equivalent experience accepted; or equivalent combination of education and experience; preferred, or equivalent experience. These map to HIGH_FLEX.
+- Scope/fit, then FLEX modifier, then pay floor and title rule. Adjusted fit = clamp(raw scope fit + FLEX modifier, 0, 100). Report class, modifier, adjusted score. Do not apply the modifier twice.
+- Blank/unresearched requirements remain UNKNOWN. Placeholder text written before the requirements were read (alert or email excerpts, not extracted, to be captured) is unresearched. Intake degree/FLEX inputs: DEGREE_TEXT, FLEX_CLASS, FLEX_BASIS only. Writer owns calculated outputs.
+- Fresh degree evidence overrides stale FLEX = YES.
+- Tesla req 285047: Degree preferred, or equivalent experience => HIGH_FLEX +90.
+FLEX_POLICY_PROSE_END
+STRICT_ACTION=DO_NOT_APPLY
+
+
+- This policy save does not rescore rows, change buckets, identity or application history, submit a Tesla application, or rewrite historical enrich files.
+- This policy does not merge req 285047 onto V2I-628904CF5172. That ID stays on CyberCab req 285131.
+
+
+SECTION=OWNERSHIP
+OWNERSHIP_VERSION=OWNERSHIP_20261007
+- Ownership means the seat strategizes the plan, executes it, and lives with and owns the results. No shared responsibility. No "for my part." The accountabilities end on that person.
+- Scope can be the site or a clearly defined large part of a site. A large part is a major shop, module, process area, or production plus maintenance plus engineering for that area.
+- Safety, people, quality, delivery, and cost count only if they end on that person. Launch and ramp of that area use the same test.
+- Report one form: SITE = unshared ownership of the plant or site; LARGE_PART = unshared ownership of a clearly defined large piece (not being plant GM is not a fail); NOT_OWNERSHIP = matrix influence, partnership language, a shared KPI, staff governance, audit, or technical support. Partial influence on a shop does not count.
+- Pay floor and title rule still apply after the ownership test.
+- OWNERSHIP_20261007 supersedes any scoring that treats ownership as full-site only.
+SECTION=TITLE_SCOPE_FIT
+
+- Primary target is senior manufacturing/quality/operations leadership: Director, Senior Director, Head, VP, GM/Plant leadership and unusually strong Manager/Senior Manager roles.
+
+- Do not reject solely because a role is below Director when compensation and scope are strong.
+
+- Automotive/manufacturing experience is transferable into adjacent industrial, automation, robotics, drone, defense, space, energy, and physical-AI environments when the actual manufacturing/quality/launch skills transfer.
+
+- Do not require CNC or aerospace pedigree when the posting does not make it a true access barrier.
+
+- Evaluate scope, plant/launch responsibility, organizational leadership, manufacturing systems, quality, operational ownership, and compensation—not title alone.
+
+- Medical-device/pharma/food/restaurant hard exclusions are governed only by the Never-Consider section and Tim overrides, not by keyword matching.
+
+SECTION=STATE_SEMANTICS
+
+- READY_TO_PURSUE = enough information exists to move the opportunity forward.
+
+- DECLINED_BY_TIM = Tim has enough information to decide not to pursue under current rules. Resolved/non-actionable unless its reopen trigger occurs, materially new evidence changes the decision, or Tim explicitly overrides.
+
+- MANUAL_RESEARCH = a named decision-changing fact is still missing. NEEDS_RESOLUTION may be interpreted as the same research condition but should not become a separate population bucket.
+
+- SCOUT_INTAKE = plausible specific job admitted to the master, analysis pending.
+
+- DISCOVERY_LEAD = plausible opportunity with material identity ambiguity/unresolved discovery detail.
+
+- BLOCKED = protected/structural blocker preventing safe disposition.
+
+- APPLIED = application submitted.
+
+- REJECTED_BY_EMPLOYER = employer rejected Tim/application.
+
+- CLOSED_DEAD = requisition/opportunity is closed/dead.
+
+- DUPLICATE = duplicate identity; survivor remains canonical.
+
+- INVALID_DISCOVERY = later proven unusable/non-job/invalid discovery record.
+
+- COVERAGE is deprecated and maps historically to DECLINED_BY_TIM. No writer may emit new COVERAGE.
+
+- REJECTED is deprecated and maps historically to REJECTED_BY_EMPLOYER. No writer may emit new REJECTED.
+
+- The master row BUCKET field is authoritative over physical section placement.
+
+SECTION=DECLINE_RULES
+
+- Every new DECLINED_BY_TIM decision requires DECLINE_REASON_CODE, DECLINE_REASON_TEXT, and REOPEN_TRIGGER.
+
+- Allowed reason codes: PAY_BELOW_FLOOR, GEOGRAPHY_GATE_FAIL, FLEX_STRICT_NO, SCOPE_BELOW_TARGET, FIT_TOO_WEAK, DOMAIN_MISMATCH, LOCATION_NOT_ACCEPTABLE, TIM_EXPLICIT_DECLINE, MULTIPLE_RULE_FAILURES.
+
+- LEGACY_REASON_NEEDS_NORMALIZATION is migration-only and must never be used for a new decision.
+
+- Decision test: if a decision-changing fact is missing -> MANUAL_RESEARCH. If enough information exists and pursue -> READY_TO_PURSUE. If enough information exists and do not pursue -> DECLINED_BY_TIM.
+
+- Do not spend research capacity reworking DECLINED_BY_TIM absent a reopen trigger, material new evidence, or Tim request.
+
+- VERIFY_LATER may remain on a declined row for decision-irrelevant unknowns.
+
+- Never use recruiter/hidden client/aggregator/no-first-party-ATS alone as a decline reason.
+
+- Never use Manager/Senior Manager title alone as a decline reason.
+
+- Never use "not plant ownership" alone as a decline reason.
+
+SECTION=PROTECTED_APPLICATION_STATES
+
+- APPLIED and REJECTED_BY_EMPLOYER are protected applicant states and anti-resurrection controls.
+
+- Application state and posting/liveness state are separate facts.
+
+- Email-confirmed APPLIED or REJECTED_BY_EMPLOYER with sufficiently bound identity MUST be upserted into the canonical master even if discovery never created the row.
+
+- Sufficient normal binding = company + title + req/LinkedIn/ATS ID. If identity is insufficient/ambiguous, HOLD; do not invent a row.
+
+- Same requisition = same canonical row. Update the existing row and preserve history; never create a second row for the same requisition.
+
+- If a terminal/protected row receives later evidence that does not legitimately reopen it, append history rather than resurrecting it.
+
+- Record employer email evidence: sender, subject, timestamp, message ID, event date when known, and provenance.
+
+- Do not estimate application dates or terminal outcomes.
+
+- Tim's direct statement that he applied controls his own application status when identity is clear.
+
+SECTION=TIM_DECISION_RULES
+
+- Tim is the final authority for his own pursuit decisions and rule changes.
+
+- Latest successfully saved Tim decision is the live Tim-controlled decision for that row.
+
+- Every Tim state change and note must carry date/time history.
+
+- Tim may reopen or override any prior Tim decision.
+
+- AI may recommend or propose; it may not silently supersede a later Tim decision.
+
+- Tim edits from Pipeline Explorer should be written through the Authorized State Writer and preserved in row/event history.
+
+- Undo restores only a safely identifiable prior Tim state; if current row state no longer matches the expected prior write, fail closed.
+
+SECTION=WRITER_AND_SCOUT_BEHAVIOR
+
+- Grok/Scout should write plausible worthwhile discoveries directly through the Authorized State Writer into SCOUT_INTAKE/DISCOVERY_LEAD as the primary path.
+
+- Direct writer POST is the preferred normal Scout path when available.
+
+- Drive WRITER_QUEUE is failover/retry transport, not a temporary candidate population. Queue retry cadence = approximately 1 minute.
+
+- A queued or direct write is not "done" until writer result/readback verifies success. HOLD/FAILED remain visible.
+
+- Forge/ChatGPT and Claude enrich/edit the existing canonical rows rather than maintaining side candidate populations.
+
+- All canonical mutations use the Authorized State Writer with identity checks, modified-time protection, count/END recount, readback, and receipt.
+
+- Writer transport ambiguity must not be treated as proof of failure. When a result is ambiguous, verify by request ID/receipt/master before blind retry.
+
+- The event log is history, not a second job store.
+
+- Grok, Forge/ChatGPT, and Claude must load the current canonical rules before disposition/ranking work once this ruleset becomes ACTIVE.
+
+SECTION=REPORTING_RANKING_GUIDANCE
+
+- APPLY NOW = ranked subset of READY_TO_PURSUE.
+
+- Other viable READY_TO_PURSUE rows remain visible as ready but not necessarily today's top list.
+
+- DECLINED_BY_TIM reporting is changes-only; do not dump the historical declined population into a daily brief.
+
+- APPLIED seats are status-only; current ranking/pay gates do not retroactively unapply them.
+
+- A thin APPLY NOW list is reported honestly; gates are never weakened merely to manufacture volume.
+
+- Missing packet completeness, ATS rendering, or first-party URL is not proof the market was empty and must not erase discovered roles.
+
+- Daily report/ranking may use job-board JD text with provenance when first-party text is unavailable.
+
+- Same-day publication remains fail-closed: the freeze artifact must exist and be valid for the current date; if process validation is incomplete, publish a clear PROCESS INCOMPLETE/BLOCKED notice rather than stale or self-ranked fallback.
+
+- No prior-day freeze/rank fallback may masquerade as today's compliant brief.
+
+- Claude may rank/analyze but should not maintain a separate population.
+
+SECTION=JOB_DOCUMENTS_AND_AI_CONTEXT
+
+- Job-search documents remain ordinary Drive files surfaced through Pipeline Explorer.
+
+- Latest Approved Resume is selected explicitly by Tim; filename/date/"FINAL" labels or AI opinion do not promote a resume.
+
+- Cover letters and supporting documents may be read as task-relevant evidence/context.
+
+- Tim's Voice contains authentic Tim-authored writing examples for style matching; AI-generated content is not automatically a Tim's Voice sample.
+
+- Tim's Voice controls writing style guidance only; it does not override factual resume/master/rules data.
+
+- Interview triage notes are timestamped Drive-backed context and may be read by all AIs for the relevant job.
+
+- Latest Tim interview note is current context; older notes remain history rather than being deleted.
+
+SECTION=CHANGE_CONTROL
+
+- AIs may propose rule changes but may not activate a new human rule.
+
+- Only Tim pressing Save in the Pipeline Explorer Rules tab makes an edited ruleset canonical after v5 activation.
+
+- Every ruleset Save is timestamped/versioned and preserved in ruleset history.
+
+- After activation, older amendments/directives remain historical evidence only when they conflict with this ruleset.
+
+- Row-specific Tim decisions in the canonical master/history remain controlling for those identities unless Tim changes them.
+
+- Any future rule that intentionally changes a compensation floor, Never-Consider category, protected-state rule, or other material gate should be explicit in this document after Tim Save.
+
+MIGRATION_NOTES
+
+- Incorporated governing logic from TIM_APPROVED_SEARCH_RULES_v4_2026-09-21.
+
+- Incorporated later Degree FLEX STRICT_NO directive, which supersedes only R1's old FLEX=YES-only treatment, not R1 compensation/geography lines.
+
+- Incorporated TIM DIRECTIVE — GOOD-FAITH ESTIMATION STANDARD and COMPENSATION ANCHOR FALLBACK.
+
+- Incorporated TIM DIRECTIVE — DECLINED_BY_TIM STATE SEMANTICS.
+
+- Incorporated DIRECTIVE_EMAIL_CONFIRMED_UPSERT_2026-09-29.
+
+- Incorporated TIM_NEVER_CONSIDER_RULES NC-001 through NC-004.
+
+- Incorporated current single-master / direct-Scout-writer / 1-minute queue-failover architecture.
+
+- Intentionally excluded volatile individual job statuses; those belong in the canonical master and row/event history.
+
+- Activated by Tim explicit Save instruction on 2026-10-02. RULESET_VERSION=3 was superseded by Tim's explicit RULES_V4_20261007 lock on 2026-10-07 at 22:06 ET.
+
+SECTION=TARGET_COMPANIES
+TARGET_COMPANY_REGISTRY_VERSION=1
+TARGET_COMPANY_MANUAL_PRIORITY_CONTROLS=YES
+TARGET_COMPANY_PRIORITY_POLICY=P1 every Scout run; P2 at least daily; P3 rotating weekly coverage; WATCH opportunistic; PAUSED no targeted search.
+- Target-company priority sets discovery intensity and the culture component of the weighted rating (P1 100, P2 90, P3 75, WATCH 60, unlisted or PAUSED 40). It never overrides compensation, geography, FLEX, scope/fit, Never-Consider, protected application state, dedupe, or canonical intake rules.
+- Broad fresh discovery remains mandatory every run; target-company sweeps are additive, not a replacement.
+TARGET_COMPANY={"id":"TC-001","company":"True Anomaly","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://trueanomaly.space/careers","rationale":"space spacecraft manufacturing/autonomy","builds":"Builds Jackal autonomous orbital vehicles for rendezvous and proximity operations; spacecraft are produced at its 35,000 sq ft GravityWorks factory in Centennial, CO.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Centennial, CO (GravityWorks factory)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":1,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-002","company":"Alta Ares","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://altaares.com/careers","rationale":"ISR/counter-UAS","builds":"Paris-based maker of AI-powered ISR and counter-UAS systems, including Black Bird turbojet interceptors, X-Lock multirotor interceptors, Pixel Lock AI guidance and Gamma ISTAR edge intelligence.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Paris, France (HQ)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":2,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-003","company":"Hadrian","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://hadrian.co/careers","rationale":"autonomous aerospace/defense factories","builds":"Runs automated, software-driven factories making precision aerospace and defense components; HQ in Torrance, CA, with a 270,000 sq ft Factory 3 in Mesa, AZ and operations in Alabama.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Torrance, CA (HQ)","Mesa, AZ (Factory 3)","Alabama (operations)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":3,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-004","company":"Quantum Systems","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://quantum-systems.com/careers","rationale":"unmanned systems","builds":"Designs and produces eVTOL fixed-wing drones such as Trinity and Vector; HQ and production in Gilching near Munich, Germany, plus a US production facility in Moorpark, CA.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Gilching (Munich), Germany (HQ / production)","Moorpark, CA (US production)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":4,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-005","company":"Swarm Aero","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://swarm.aero/careers","rationale":"UAV swarm manufacturing","builds":"Builds large long-range multimission UAVs for sensing and strike, plus Legion swarm command-and-control software; HQ in Oxnard, CA, with an 80,000 sq ft manufacturing center in Fayetteville, AR.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Oxnard, CA (HQ)","Fayetteville, AR (manufacturing center)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":5,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-006","company":"Machina Labs","aliases":[],"priority":"PAUSED","status":"PAUSED","priority_source":"TIM_MANUAL","careers_url":"https://machinalabs.ai/careers","rationale":"software-defined metal manufacturing","builds":"Uses AI-driven robotic sheet-metal forming (Roboforming) to make large complex aerospace, defense and automotive parts; HQ and factories in Chatsworth (Los Angeles), CA.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Chatsworth (Los Angeles), CA (HQ / factory)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":6,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-007","company":"Shield AI","aliases":["ShieldAI"],"priority":"P1","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://shield.ai/careers","rationale":"Autonomous aircraft production in Texas; existing hiring-manager relationships in Manufacturing and Quality","builds":"Builds V-BAT VTOL drones, the in-development X-BAT autonomous fighter and Hivemind autonomy software; V-BATs are produced at its Batcave facility near Dallas, TX, with a Hyderabad, India production hub planned.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Dallas, TX area (V-BAT production, Batcave)","Hyderabad, India (planned production hub)"],"locations_source":"TIM_MANUAL","locations_asof":"2026-10-16","source_rank":7,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":"Lever enforces a 6-month lockout per req (R4782 ~Jan 13, R5315 ~Feb 19, R6147 ~Apr 1 2027). Route through people, not the portal."}
+TARGET_COMPANY={"id":"TC-008","company":"Neros Technologies","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://neros.tech/careers","rationale":"tactical drone manufacturing","builds":"Builds low-cost expendable military FPV drones (Archer, Archer Strike) and the Crossbow ground control station; designs and produces them in-house at its factory in El Segundo, CA.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["El Segundo, CA (HQ / factory)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":8,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-009","company":"Digantara","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://digantara.co.in/careers","rationale":"space intelligence","builds":"Builds space surveillance and missile-warning satellites and space-situational-awareness data services; Bengaluru-based with a 25,000 sq ft satellite plant in India and operations in Colorado.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Bengaluru, India (HQ / satellite plant)","Colorado (US operations)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":9,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-010","company":"PhysicsX","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://physicsx.ai/careers","rationale":"AI engineering/simulation","builds":"Builds an AI-native engineering simulation software platform for aerospace and defense, automotive, semiconductors, materials and energy; HQ in London, UK, with an office in New York; no hardware manufacturing found.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["London, UK (HQ)","New York, NY (office)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":10,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-011","company":"Slingshot Aerospace","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://slingshot.space/careers","rationale":"space operations/autonomy","builds":"Builds AI space domain awareness software (Slingshot Beacon, Portal, Laboratory) and a global network of telescope sensors; based in El Segundo, CA, with offices in Austin, TX and Colorado.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["El Segundo, CA","Austin, TX","Colorado"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":11,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-012","company":"Open Cosmos","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://open-cosmos.com/careers","rationale":"satellite manufacturing","builds":"Designs, builds and operates small satellites for telecom, Earth observation and science; built in the cleanroom at its HQ on Harwell Campus, Oxfordshire, UK, with teams in Spain, Portugal and Greece.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Harwell Campus, Oxfordshire, UK (HQ / cleanroom)","Spain","Portugal","Greece"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":12,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-013","company":"Ramon.Space","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://ramon.space/careers","rationale":"satellite computing hardware","builds":"Develops space-hardened onboard computing hardware and software for satellites; HQ in Milpitas, CA (founded in Yokneam, Israel); products made by Foxconn subsidiary Ingrasys on a line in Taiwan.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Milpitas, CA (HQ)","Yokneam, Israel","Taiwan (contract manufacturing, Ingrasys)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":13,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-014","company":"UVify","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://uvify.com/careers","rationale":"drone platforms","builds":"Builds IFO swarm and light-show drones plus related autonomy hardware and software; HQ in Seattle, WA, with all R&D and manufacturing in South Korea.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Seattle, WA (HQ)","South Korea (R&D / manufacturing)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":14,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-015","company":"Orbitworks","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://orbitworks.space/careers","rationale":"satellite manufacturing","builds":"Builds and integrates satellites, including the Altair AI Earth-observation constellation; Loft Orbital and Marlan Space joint venture with a 50-satellites-per-year plant in KEZAD, Abu Dhabi, UAE.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["KEZAD, Abu Dhabi, UAE (satellite plant)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":15,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-016","company":"Auterion","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://auterion.com/careers","rationale":"drone autonomy platform","builds":"Builds AuterionOS autonomy software and Skynode flight computers for defense and enterprise drones; HQ in Arlington, VA, engineering in Zurich and Munich; Skynode S integration in Germany.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Arlington, VA (HQ)","Zurich, Switzerland (engineering)","Munich, Germany (engineering)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":16,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-017","company":"GITAI","aliases":[],"priority":"PAUSED","status":"PAUSED","priority_source":"TIM_MANUAL","careers_url":"https://gitai.tech/careers","rationale":"space robotics manufacturing","builds":"Builds space robotics, including robotic arms, lunar rovers, spacecraft platforms and satellite components; HQ in Torrance, CA, with a subsidiary in Tokyo, Japan.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Torrance, CA (HQ)","Tokyo, Japan"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":17,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-018","company":"MatrixSpace","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://matrixspace.com/careers","rationale":"radar/sensor hardware","builds":"Builds small portable AI radar sensors (MatrixSpace Radar) for counter-drone, airspace safety and perimeter security; based in Burlington, MA.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Burlington, MA"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":18,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-019","company":"Advanced Navigation","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://advancednavigation.com/careers","rationale":"navigation hardware","builds":"Builds AI-based inertial navigation systems, including Boreas digital fibre-optic gyroscopes, and robotic systems; manufactures at its facility at UTS Tech Lab in Botany, Sydney, Australia.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Botany, Sydney, Australia (manufacturing)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":19,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-020","company":"Infinite Orbits","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://infiniteorbits.io/careers","rationale":"satellite servicing","builds":"Develops Endurance life-extension spacecraft that dock with GEO satellites, plus Orbit Guard inspection smallsats; based in Toulouse, France.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Toulouse, France"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":20,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-021","company":"Arkeus","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://arkeus.com/careers","rationale":"AI sensing hardware","builds":"Builds hyperspectral AI sensing systems for defense drones and autonomous aircraft; founded in Melbourne, opened a manufacturing facility in Ormeau, Queensland, Australia in July 2026.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Melbourne, Australia","Ormeau, QLD, Australia (manufacturing)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":21,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-022","company":"Harmattan AI","aliases":[],"priority":"PAUSED","status":"PAUSED","priority_source":"TIM_MANUAL","careers_url":"https://harmattan.ai/careers","rationale":"military autonomous systems","builds":"Builds low-cost, high-volume autonomous military drones such as the DELCO micro-drone, plus AI piloting software; Paris-based startup that designs and assembles in France.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Paris, France (design / assembly)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":22,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-023","company":"Quindar","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://quindar.space/careers","rationale":"satellite mission systems","builds":"Builds cloud-based satellite ground and mission-management software (software, not hardware manufacturing); headquartered in Denver, Colorado.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Denver, CO (HQ)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":23,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-024","company":"Pyka","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://flypyka.com/careers","rationale":"autonomous electric aircraft","builds":"Builds the Pelican autonomous electric aircraft for crop spraying and cargo; most manufacturing done at its Oakland, CA facility.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Oakland, CA (manufacturing)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":24,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-025","company":"NewSpace Research and Technologies","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://newspace.co.in/careers","rationale":"UAV/air-platform manufacturing","builds":"Builds UAVs for the Indian military, including solar HAPS, Sheshnaag swarm loitering munitions and tethered and multirotor drones; AS9100-certified, headquartered in Bengaluru, India.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Bengaluru, India (HQ)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":25,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-026","company":"PDW","aliases":["Performance Drone Works"],"priority":"P1","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://pdw.ai/careers","rationale":"Combat drone rate production in Huntsville, the strongest household-fit metro","builds":"Builds NDAA-compliant tactical sUAS such as the C100 for military use; produces at Drone Factory 01, a 90,000 sq ft plant in Huntsville, AL.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Huntsville, AL (Drone Factory 01)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":26,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":"Senior Director Manufacturing Systems & Automation: recruiter said an offer was already out. Domain is pdw.ai."}
+TARGET_COMPANY={"id":"TC-027","company":"Reliable Robotics","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://reliable.co/careers","rationale":"autonomous aircraft systems","builds":"Builds FAA-track autonomous flight systems retrofitted onto aircraft such as the Cessna 208B Caravan; headquartered in Mountain View, CA.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Mountain View, CA (HQ)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":27,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-028","company":"Skydio","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://skydio.com/careers","rationale":"autonomous drone manufacturing","builds":"Builds autonomous drones such as the X10 and X10D for defense, public safety and enterprise; assembles them at a 70,000+ sq ft factory in Hayward, CA.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Hayward, CA (factory)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":28,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-029","company":"Fortem Technologies","aliases":[],"priority":"PAUSED","status":"PAUSED","priority_source":"TIM_MANUAL","careers_url":"https://fortemtech.com/careers","rationale":"counter-UAS hardware","builds":"Builds counter-drone hardware including TrueView radars, DroneHunter interceptors, launched munitions and the SkyDome system; HQ and manufacturing in Lindon, UT.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Lindon, UT (HQ / manufacturing)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":29,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-030","company":"LeoLabs","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://leolabs.space/careers","rationale":"radar network hardware","builds":"Builds and operates phased-array radars that track objects in low Earth orbit, with sites in AK, TX, Costa Rica, the Azores, New Zealand and Western Australia; HQ in Menlo Park, CA.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Menlo Park, CA (HQ)","Alaska (radar site)","Texas (radar site)","Costa Rica (radar site)","Azores, Portugal (radar site)","New Zealand (radar site)","Western Australia (radar site)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":30,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-031","company":"Delair","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://delair.aero/careers","rationale":"fixed-wing drones","builds":"Makes professional fixed-wing drones such as the UX11 and DT26 and offers drone data analysis; HQ in Toulouse-Labege, France, which also posts production operator jobs.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Toulouse-Labège, France (HQ / production)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":31,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-032","company":"TEKEVER","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://tekever.com/careers","rationale":"unmanned aerial systems","builds":"Makes unmanned aerial systems including the AR3 VTOL and AR5 long-range drones; builds in Caldas da Rainha and Ponte de Sor, Portugal, with an AR5 factory planned in Swindon, UK.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Caldas da Rainha, Portugal","Ponte de Sor, Portugal","Swindon, UK (planned AR5 factory)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":32,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-033","company":"Heven AeroTech","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://hevenaerotech.com/careers","rationale":"hydrogen drone manufacturing","builds":"Builds hydrogen-powered VTOL drones such as the Z1; makes them in Bingen and Dallesport, WA, and at a 56,000 sq ft plant in Winchester, VA that opened in 2026.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Bingen, WA","Dallesport, WA","Winchester, VA (plant)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":33,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-034","company":"Ursa Space Systems","aliases":[],"priority":"P2","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://ursaspace.com/careers","rationale":"radar satellite analytics","builds":"Provides satellite intelligence from synthetic aperture radar (SAR) and optical imagery, such as oil inventory reports; a data and analytics company based in Ithaca, NY, not a hardware maker.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Ithaca, NY (HQ)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":34,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-035","company":"Raphe Mphibr","aliases":[],"priority":"P3","status":"ACTIVE","priority_source":"SEED_RECOMMENDATION","careers_url":"https://raphe.com/careers","rationale":"UAV design/manufacturing","builds":"Designs and makes military UAVs, including swarm and precision-strike drones, plus in-house flight controllers, batteries and composites; manufactures in Noida, Uttar Pradesh, India.","builds_source":"AUTO_SEARCH","builds_asof":"2026-10-04","locations":["Noida, Uttar Pradesh, India (manufacturing)"],"locations_source":"AUTO_SEARCH","locations_asof":"2026-10-04","source_rank":35,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"LinkedIn Week 79","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":""}
+TARGET_COMPANY={"id":"TC-1791186415158","company":"Tesla","aliases":["Tesla Inc"],"priority":"P1","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://www.tesla.com/careers","rationale":"High-volume vehicle and energy production in Austin, the preferred metro","builds":"Electric vehicles (Model Y, Cybertruck, Semi), Megapack and Powerwall energy storage, battery cells, Optimus robot.","builds_source":"TIM_MANUAL","builds_asof":"2026-10-16","locations":["Austin, TX (Giga Texas)","Brookshire, TX (Megafactory)","Fremont, CA","Sparks, NV (Giga Nevada)","Lathrop, CA (Megafactory)"],"locations_source":"TIM_MANUAL","locations_asof":"2026-10-16","source_rank":0,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"Tim manual add","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":"Applied GFTX Manufacturing Quality Manager 284739 on Oct 14 2026. Texas floor $210K base."}
+TARGET_COMPANY={"id":"TC-1791186430913","company":"SpaceX","aliases":["Space Exploration Technologies","Starlink"],"priority":"P1","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://www.spacex.com/careers","rationale":"Highest-rate aerospace production; large Texas manufacturing footprint","builds":"Falcon 9 and Starship launch vehicles, Raptor and Merlin engines, Dragon spacecraft, Starlink satellites and user terminals.","builds_source":"TIM_MANUAL","builds_asof":"2026-10-16","locations":["Starbase, TX (Starship)","Bastrop, TX (Starlink)","McGregor, TX (engine test)","Hawthorne, CA (HQ/manufacturing)","Cape Canaveral, FL"],"locations_source":"TIM_MANUAL","locations_asof":"2026-10-16","source_rank":0,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"Tim manual add","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":"Starbase Production Director rejected Sep 10 2026; Starlink production seats in Bastrop are the closer fit."}
+TARGET_COMPANY={"id":"TC-1791186441840","company":"Anduril","aliases":["Anduril Industries"],"priority":"P1","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://www.anduril.com/careers","rationale":"Rate production of defense hardware; Arsenal-1 ramp","builds":"Autonomous defense systems: Fury collaborative combat aircraft, Roadrunner, Altius, Barracuda, solid rocket motors and Lattice software. Arsenal-1 hyperscale factory in Ohio began Fury production in 2026.","builds_source":"TIM_MANUAL","builds_asof":"2026-10-16","locations":["Costa Mesa, CA (HQ)","Columbus/Ashville, OH (Arsenal-1)"],"locations_source":"TIM_MANUAL","locations_asof":"2026-10-16","source_rank":0,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"Tim manual add","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":"Portal applications have been rejected at the screen repeatedly; attach a human first (Olliver Teston, Kirk Petty)."}
+TARGET_COMPANY={"id":"TC-1792171392712","company":"TAR","aliases":["Transformative American Resources"],"priority":"P3","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://jobs.ashbyhq.com/tar","rationale":"Austin HQ; West Texas manufacturing ramp; $120M Series A Oct 2026","builds":"Off-grid solar + battery storage power campuses for AI data centers; proprietary racking and the construction robots that install it","builds_source":"TIM_MANUAL","builds_asof":"2026-10-16","locations":["Austin, TX (HQ)","West Texas (manufacturing/logistics)","San Francisco, CA (engineering/robotics)"],"locations_source":"TIM_MANUAL","locations_asof":"2026-10-16","source_rank":0,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"Tim manual add","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":"Target Texas seats only. SF Head of Manufacturing Engineering reviewed Oct 16 2026: Skip (West Coast floor)."}
+TARGET_COMPANY={"id":"TC-1792171592731","company":"Blue Origin","aliases":[],"priority":"P1","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://www.blueorigin.com/careers","rationale":"Huntsville engine and thruster production; aerospace needs automotive rate-production experience","builds":"New Glenn and New Shepard rockets, BE-4 and BE-7 engines, Blue Moon lander, in-space thrusters.","builds_source":"TIM_MANUAL","builds_asof":"2026-10-16","locations":["Kent, WA (HQ)","Huntsville, AL (BE-4/BE-7 engine factory, thrusters)","Merritt Island / Cape Canaveral, FL (New Glenn)","Van Horn, TX (West Texas launch site)"],"locations_source":"TIM_MANUAL","locations_asof":"2026-10-16","source_rank":0,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"Tim manual add","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":"Applied R68925 Thrusters Value Stream Leader Oct 6 2026 via hiring manager Terry Alldredge. R69337 and R67262 rejected."}
+TARGET_COMPANY={"id":"TC-1792171593159","company":"Allen Control Systems","aliases":["ACS"],"priority":"P1","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://job-boards.greenhouse.io/allencontrolsystems","rationale":"Austin defense hardware moving from prototype to rate production","builds":"Bullfrog AI-guided counter-drone gun system (M240, 7.62mm) for Group 1–3 drone threats; expanding Austin site for low-rate initial production.","builds_source":"TIM_MANUAL","builds_asof":"2026-10-16","locations":["Austin, TX area (production, 57,000+ sq ft expansion)","Huntsville, AL (innovation lab at UAH)"],"locations_source":"TIM_MANUAL","locations_asof":"2026-10-16","source_rank":0,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"Tim manual add","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":"Director of Quality (Pflugerville) applied Aug 2026 and rejected Aug 27. Brian Kalani (Supplier Quality Engineer) LinkedIn request still unanswered."}
+TARGET_COMPANY={"id":"TC-1792171593584","company":"E-Space","aliases":["E Space"],"priority":"P1","status":"ACTIVE","priority_source":"TIM_MANUAL","careers_url":"https://jobs.lever.co/espace","rationale":"High-rate satellite manufacturing in Texas","builds":"Satellites for a low Earth orbit (LEO) space system supporting IoT connectivity, built at rate in Arlington, TX.","builds_source":"TIM_MANUAL","builds_asof":"2026-10-16","locations":["Arlington, TX (satellite manufacturing)"],"locations_source":"TIM_MANUAL","locations_asof":"2026-10-16","source_rank":0,"target_functions":["Manufacturing","Quality","Production","Operations","Industrialization"],"added_source":"Tim manual add","last_searched_at":"","last_useful_hit_at":"","jobs_found":0,"qualified_hits":0,"notes":"VP Manufacturing & Production (Arlington) lead surfaced Sep 25 2026; prior E-Space history exists."}
+END TIM_PIPELINE_RULES_CANONICAL
+MASTER AUTHORITY CORRECTION — APPROVED 2026-10-09: Sole live canonical population is plain-text V2_CURRENT_POPULATION_MASTER.txt, Drive ID 1My9QYVPBblw8c7vFMFxGOAqgTSuH9gS8. Its COUNTS line is authoritative; Writer alone mutates it via the text-file Drive workflow, with RESULT__, COMPLETE receipt and independent fresh readback required. Former Google Doc Drive ID 19y5xtspYk3ze_E2uRMcUsK3CNh3tbtCILz-us8YtpDI is FROZEN ROLLBACK: NEVER READ OR WRITE for live operations. This correction supersedes any historical master-ID statements without changing other canonical policy. END MASTER AUTHORITY CORRECTION.

@@ -1,0 +1,77 @@
+WRITER_ACCESS_DIRECTIVE_V9_2026-10-02
+STATUS=ACTIVE
+OWNER=Tim Pruitt
+SUPERSEDES=WRITER_ACCESS_DIRECTIVE_2026-10-02.txt where conflicting
+RULES_AUTHORITY=TIM_PIPELINE_RULES_CANONICAL Drive 1uuIopBY2Et-leu_tOdxnWAJJLniKwk08rdLCypuM2BE
+MASTER=V2_CURRENT_POPULATION_MASTER.txt Drive 1My9QYVPBblw8c7vFMFxGOAqgTSuH9gS8
+
+
+WRITER
+Apps Script web app remains the Authorized State Writer.
+Live deployed backend: use action=ping for the current version; repository last verified version 14 on 2026-10-03.
+Shared credential use by Grok, ChatGPT/Forge and Claude is Tim-authorized.
+
+
+PREFERRED TRANSPORT
+1. Direct writer request when the runtime supports it.
+2. AI_Coordination/WRITER_QUEUE as failover/retry transport.
+   Folder ID: 1IVyEKPxqY_7uL9GG9RV9Gu9raEco0AZ7
+   Retry cadence: approximately 1 minute.
+   Queue is transport only, never a job population.
+3. GET submit may be used for small writes when POST is unavailable.
+
+
+CLAUDE SCHEDULED-RUNTIME TRANSPORT
+For routine trig_01BUwdhUoXhJkeqzqDETckXx, use WRITER_QUEUE first while direct HTTP is blocked or requires interactive approval. Do not repeat known-blocked WebFetch or curl attempts on every run. Direct HTTP may resume only after access is verified in that scheduled runtime.
+A queue submission is PENDING, never COMPLETE. RESULT__ SUCCESS records acceptance/application and may still carry verification PENDING. Require an independent later-execution COMPLETE receipt/index and fresh canonical master readback of the exact intended row/state before reporting the write verified. Report HOLD or FAILED explicitly; when unresolved within the run budget, report PENDING with stable requestId, request file ID and WRITE_ID. Reconcile against the latest receipt/index rather than treating the original RESULT as a permanently pending verdict.
+Before retrying, inspect prior per-item results and current master. Retry only failed work still required; preserve already successful changes. Rebuild stale requests against current state. Never replay an entire partly successful batch blindly.
+Recommended routine name: Forge — Master Coordination Sweep (every 2h). Scheduler rename and prompt readback require access to Claude's routine controls; this document alone does not prove those changes occurred.
+
+
+SUPPORTED V9 CAPABILITIES
+Reads include: ping, master, state, receipts, rules, runs, canonical_rules, events, interview_notes, documents, document_text, discovery_requests, request_result, automation, scoring.
+Writes include: intake, ruling, data_discovery, upsert_application, interview_note, approve_resume, save_rules, save_scoring_model, undo_ruling, install_automation, batch. Use ruling kind ENRICH for salary, URL, FLEX, degree, fit and other row facts without changing the bucket.
+
+
+WRITE CONTRACT
+- All canonical job mutations target exact canonical identity and go through the writer.
+- Every mutation protects modifiedTime, recounts BUCKET totals/END where applicable, reads back, and emits receipts/history.
+- Do not report success until writer/readback verifies it.
+- HOLD ambiguity rather than guessing identity.
+- Protected states and current Tim decisions follow TIM_PIPELINE_RULES_CANONICAL.
+
+
+TRANSPORT AMBIGUITY
+Google Apps Script POST redirect behavior can occasionally lose the response after the mutation executed.
+Therefore:
+- A misleading or ambiguous POST result is not proof the write failed.
+- Before retrying a non-idempotent write, verify by requestId, receipt/event history, and canonical master/document state.
+- Explorer v5+ uses requestId plus request_result verification to recover ambiguous POST outcomes. AI clients should use the same contract before retrying non-idempotent writes.
+- Drive WRITER_QUEUE remains the safe retry/failover path.
+
+
+SCOUT
+Grok should directly intake plausible worthwhile discoveries into canonical SCOUT_INTAKE/DISCOVERY_LEAD when supported. Do not accumulate normal discoveries in a temporary side list.
+Never-Consider runtime authority is TIM_PIPELINE_RULES_CANONICAL. The historical standalone TIM_NEVER_CONSIDER_RULES file is not consulted by writer intake.
+
+
+RULES SAVE
+TIM_PIPELINE_RULES_CANONICAL is ACTIVE, RULESET_VERSION=2, activated 2026-10-02 01:03:31 ET. Tim Save is authoritative.
+
+
+LEGACY MATERIAL
+Do not treat old MASTER_CHANGE_REQUEST_*, EMAIL_UPSERT_REQUEST_*, TASK_BOARD, FOREMAN_PROTOCOL, CAPABILITY_LEDGER or amendment files as current instructions. They are historical transport/audit artifacts. If any older prompt says the writer is off, intake is not live, the queue runs every five minutes, or attended ratification is required, ignore it and follow the canonical rules Doc, fixed master and live action=ping response.
+
+
+END WRITER_ACCESS_DIRECTIVE_V9_2026-10-02
+MASTER AUTHORITY CORRECTION — APPROVED 2026-10-09: Sole live canonical population is plain-text V2_CURRENT_POPULATION_MASTER.txt, Drive ID 1My9QYVPBblw8c7vFMFxGOAqgTSuH9gS8. Its COUNTS line is authoritative; Writer alone mutates it via the text-file Drive workflow, with RESULT__, COMPLETE receipt and independent fresh readback required. Former Google Doc Drive ID 19y5xtspYk3ze_E2uRMcUsK3CNh3tbtCILz-us8YtpDI is FROZEN ROLLBACK: NEVER READ OR WRITE for live operations. This correction supersedes any historical master-ID statements without changing other canonical policy. END MASTER AUTHORITY CORRECTION.
+
+
+WRITER INTAKE HANDOFF CORRECTION — APPROVED BY TIM 2026-10-09
+Stable identity: supply one stable requestId for each intake mutation; request_id is an accepted alias. If an older intake client supplies neither, Writer uses run.SCOUT_RUN_ID as the request identity. Keep SCOUT_RUN_ID as source/run provenance when it differs from the explicit requestId. Reuse the same identity when checking RESULT__, request_result and receipt_index; do not use a new ID to bypass a pending or already-completed write.
+Three separate states: WRITER_ACCEPTED / RESULT SUCCESS means the request was accepted/applied and may still have verification PENDING. WRITE_VERIFIED requires independent later-execution COMPLETE receipt/index plus fresh exact-row readback. RESEARCH_COMPLETE and READY_TO_PURSUE require their own evidence and canonical policy decisions; a durable intake write does not establish either.
+Partial source evidence: email notifications, aggregator links and bounded posting extraction may support plausible identified intake under ACTIVE canonical Rules and Writer admission safeguards. Preserve initiating URL, provider, message ID/time, exact retrieved wording and explicit unknowns. Missing salary, FLEX, degree, scope, reporting level or posting detail remains a research obligation, not an automatic intake exclusion. Do not infer eligibility, degree equivalency or complete coverage from missing text. Explicit eligibility/degree holds, ambiguous identity, protected states and Writer rejection remain governed by existing Rules and direct Tim instructions.
+Legacy reconciliation: if rows are already present but the request mapping is absent, inspect the final receipt by SCOUT_RUN_ID and original WRITE_ID. A stale RESULT with verification PENDING is not the latest verification authority. Run verify_pending only when a durable pending obligation exists; an empty pending array is not proof of failure. When an intact final independent COMPLETE intake receipt exists without REQUEST_ID, the authorized Writer action reconcile_intake_receipt accepts requestId (the original SCOUT_RUN_ID) and writeId. It repairs the index only after validating the historical proof, live-master target, unique current rows and consistent counts/END markers; it does not replay intake or certify job research. Missing, conflicting, false-complete or incomplete proof stays blocked for governed resolution. Read back receipt_index, request_result and writer_status before clearing the affected receipt gate.
+Completion/reporting: distinguish submitted, accepted, write-verified, researched, held and pursuit-ready counts. Clear only a receipt gate proven recovered; source coverage, held roles and unfinished email/candidate obligations remain PARTIAL until separately resolved. Continue to fresh-read authority, native prompt and assigned scope before any new mutation. A document edit does not prove native prompt adoption or change schedules. Claude and Grok remain deferred; the cross-AI relay remains deferred.
+RECOVERY RECORD: FORGE-EMAIL-20261009-1758ET-BATCH01 / WRITE_ID=W-20261009220424610-1ffb28 was independently verified COMPLETE at 2026-10-09T22:05:01.251Z. Writer version 47, build f0ea281, reconciled its missing index identity at 2026-10-10T00:33:51.652Z. Subsequent live readback returned receipt_index COMPLETE, request_result durable=true, writer_status batch recovered=true, unverified count=0 and queue pending/processing/hold=0. The 690-row master was unchanged; no replay occurred. This supersedes the stale missing-mapping blocker for this batch only. Shield AI R5252 and Blue Origin R67464/R72930 remain held under current owner instructions; this correction does not authorize their submission or complete other scoped obligations.
+END WRITER INTAKE HANDOFF CORRECTION
