@@ -1,5 +1,5 @@
 TARGET COMPANIES PRIORITY DIGEST (generated from canonical rules; do not edit, edit the registry in the Pipeline Explorer)
-SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ ba8ab37
+SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 383f3b8
 COMPANIES=44
 Priority sets discovery intensity and the culture score only. It never overrides pay, geography, FLEX, scope/fit, Never-Consider, protected states or dedupe.
 
@@ -14,14 +14,13 @@ P1 (every discovery run): 9
 - AEVEX | careers: https://job-boards.greenhouse.io/aevexaerospace | Tampa, FL (manufacturing); Solana Beach, CA (HQ); Ohio; Virginia; Alabama
 - Path Robotics | careers: UNKNOWN | Columbus, OH (HQ / production)
 
-P2 (at least daily): 14
+P2 (at least daily): 13
 - True Anomaly | careers: https://trueanomaly.space/careers | Centennial, CO (GravityWorks factory)
 - Hadrian | careers: https://hadrian.co/careers | Torrance, CA (HQ); Mesa, AZ (Factory 3); Alabama (operations)
 - Swarm Aero | careers: https://swarm.aero/careers | Oxnard, CA (HQ); Fayetteville, AR (manufacturing center)
 - Slingshot Aerospace | careers: https://slingshot.space/careers | El Segundo, CA; Austin, TX; Colorado
 - Ramon.Space | careers: https://ramon.space/careers | Milpitas, CA (HQ); Yokneam, Israel; Taiwan (contract manufacturing, Ingrasys)
 - UVify | careers: https://uvify.com/careers | Seattle, WA (HQ); South Korea (R&D / manufacturing)
-- Auterion | careers: https://auterion.com/careers | Arlington, VA (HQ); Zurich, Switzerland (engineering); Munich, Germany (engineering)
 - MatrixSpace | careers: https://matrixspace.com/careers | Burlington, MA
 - Quindar | careers: https://quindar.space/careers | Denver, CO (HQ)
 - Skydio | careers: https://skydio.com/careers | Hayward, CA (factory)
@@ -49,7 +48,8 @@ P3 (rotating weekly coverage): 17
 - Raphe Mphibr | careers: https://raphe.com/careers | Noida, Uttar Pradesh, India (manufacturing)
 - TAR | careers: https://jobs.ashbyhq.com/tar | Austin, TX (HQ); West Texas (manufacturing/logistics); San Francisco, CA (engineering/robotics)
 
-WATCH (opportunistic): 0
+WATCH (opportunistic): 1
+- Auterion | careers: https://auterion.com/careers | Arlington, VA (HQ); Zurich, Switzerland (engineering); Munich, Germany (engineering)
 
 PAUSED (no targeted search): 4
 - Machina Labs | careers: https://machinalabs.ai/careers | Chatsworth (Los Angeles), CA (HQ / factory)
