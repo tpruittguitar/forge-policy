@@ -1,10 +1,12 @@
 TARGET COMPANIES PRIORITY DIGEST (generated from canonical rules; do not edit, edit the registry in the Pipeline Explorer)
-SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 71c3aad
+SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 3356d19
 COMPANIES=44
 Priority sets discovery intensity and the culture score only. It never overrides pay, geography, FLEX, scope/fit, Never-Consider, protected states or dedupe.
 
-P1 (every discovery run): 9
+DREAM (every discovery run, first): 1
 - Shield AI | careers: https://shield.ai/careers | Dallas, TX area (V-BAT production, Batcave); Hyderabad, India (planned production hub)
+
+P1 (every discovery run): 8
 - PDW | careers: https://pdw.ai/careers | Huntsville, AL (Drone Factory 01)
 - Tesla | careers: https://www.tesla.com/careers | Austin, TX (Giga Texas); Brookshire, TX (Megafactory); Fremont, CA; Sparks, NV (Giga Nevada); Lathrop, CA (Megafactory)
 - SpaceX | careers: https://www.spacex.com/careers | Starbase, TX (Starship); Bastrop, TX (Starlink); McGregor, TX (engine test); Hawthorne, CA (HQ/manufacturing); Cape Canaveral, FL
