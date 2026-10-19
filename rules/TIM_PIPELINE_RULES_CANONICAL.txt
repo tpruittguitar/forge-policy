@@ -89,21 +89,19 @@ SECTION=COMPENSATION_GEOGRAPHY
 
 HOME_PIN=Cleveland, Tennessee
 
-DISTANCE_METHOD=Driving miles, not straight-line distance.
+LOCATION_METHOD=Tim's geo map score for the job's site (the scoring model's geo points; Tim edits them on the map).
 
-- BAND 1: CA, OR, WA plus CT, ME, MA, NH, NJ, NY, PA, RI, VT. Base-pay midpoint threshold = $400,000.
+- PAY WORTH (Tim 2026-10-19 02:14 / 02:17 ET): pay is scored, not hard-floored. PAY_WORTH (0-100) compares the base-pay midpoint with what the place needs on Tim's geo map: NEED = $300,000 - $120,000 x geo score / 100 ($180,000 at geo 100, $300,000 at geo 0). A remote role is scored at home. PAY_WORTH = 100 / (1 + e^-((pay / NEED - 0.8525) / 0.085)), a smooth curve: pay at 70% of NEED = 14, 80% = 35, 90% = 64, 100% = 85, 120% = 98.
 
-- BAND 2: all MI, Chicago metro including NW Indiana, WI, MN. Base-pay midpoint threshold = $300,000.
+- PAY_WORTH is the compensation part of the job score. Pay status: PASS at 50 or more; PAY HOLD only under 15 when the role has no remote or relocation upside; otherwise CHECK and the job keeps moving.
 
-- Outside Bands 1/2: 0-150 driving miles = $180,000 base floor; 151-250 = $190,000; 251+ = $200,000.
+- Several plausible worksites: scored at the best site; sites that disagree on PASS / CHECK / HOLD are CHECK. A role outside the US is CHECK.
 
-- Florida has a flat $210,000 base floor when it exceeds the normal ring.
-
-- Downstate Illinois is not Band 2 and uses the normal ring model.
+- Tim tunes PAY_WORTH by changing geo map scores; the NEED range and cutoffs are settings in the scoring model.
 
 - Posted target-role base range is preferred. Midpoint = (low + high) / 2 where midpoint logic applies.
 
-- Base pay controls the floor. Bonus, equity, relocation, vehicle programs, and other package adders do not manufacture a base-floor pass.
+- Base pay is what PAY_WORTH scores. Bonus, equity, vehicle programs, and other package adders do not raise PAY_WORTH. Relocation support only removes a PAY HOLD (the role stays CHECK).
 
 - Closer to home is a preference, not an automatic veto or artificial score bonus.
 
@@ -111,17 +109,21 @@ DISTANCE_METHOD=Driving miles, not straight-line distance.
 
 - Pure first-line/group-leader/individual-contributor roles normally fall below target unless there is a documented leadership pathway and economics still work.
 
-- RETIRED THRESHOLDS must never be revived from old MCRs, prompts, reports, or AI memory. Examples include prior WC/NE $250k posted-low, WC/NE $300k, MI $250k, and MI $230k rules.
+- RETIRED THRESHOLDS must never be revived from old MCRs, prompts, reports, or AI memory. Examples include prior WC/NE $250k posted-low, WC/NE $300k, MI $250k, and MI $230k rules, and (retired by Tim 2026-10-19) the Band 1 $400k / Band 2 $300k / ring $180k-$200k / Florida $210k base floors, replaced by PAY WORTH.
 
 - Volkswagen vehicle/insurance benefit baseline for offer/relocation comparisons = $17,900/year point estimate (~$1,492/month; reasonable range $17,800-$18,000/year).
 
 - If leaving VW requires buying two replacement vehicles, include the real financing/bad-credit impact in total-compensation comparisons.
 
-- Vehicle/package benefits are offer economics; they do not change the stated base-pay floor unless Tim explicitly creates a role-specific exception.
+- Vehicle/package benefits are offer economics; they do not change PAY_WORTH unless Tim explicitly creates a role-specific exception.
 
 SECTION=COMPENSATION_ESTIMATION
 
 - Perfect pay data is not required. Transparent uncertainty is required.
+
+- SALARY RULE (Tim 2026-10-19 01:34 ET): an estimated salary is a real salary. Show it and use it everywhere: popup, table, drawer, scoring and decisions. Never treat it as PAY UNKNOWN, and never hold or stop a job because its pay is estimated. PAY UNKNOWN only when there is no posted pay and no estimate.
+
+- An estimate is real pay for display, scoring, PAY_WORTH and decisions. Hold on pay only when PAY_WORTH is a PAY HOLD. Confidence lowers a label only. PAY UNKNOWN only with no posted pay and no estimate.
 
 - Source effort order: target employer/posting; employer-authored comparable role; credible pay-transparency/employer comparison; comparable company/title/scope/geography; role-specific recruiter/job-board claim; weaker market data only as sanity check.
 
@@ -135,13 +137,13 @@ SECTION=COMPENSATION_ESTIMATION
 
 - If no clean numeric anchor exists but credible evidence still supports directional judgment, an ESTIMATED / LOW value may be used only when its basis and uncertainty are explicit.
 
-- Aggregator-only or unsupported legacy numbers do not become verified compensation and must not be recycled as fact.
+- Aggregator-only or unsupported legacy numbers do not become verified compensation and must not be recycled as posted fact. They stay usable as ESTIMATED pay (basis and confidence recorded).
 
-- Every estimate used for a disposition records: ESTIMATED flag, range/value, HIGH/MED/LOW confidence, sources attempted, evidence/anchors, key uncertainty, whether uncertainty could change the disposition, governing rule, AS-OF date, and verification note. Compensation estimates expire/review after approximately 30 days unless replaced by verified evidence.
+- Every estimate used for a disposition records: ESTIMATED flag, range/value, HIGH/MED/LOW confidence, sources attempted, evidence/anchors, key uncertainty, whether uncertainty could change the disposition, governing rule, AS-OF date, and verification note. Compensation estimates expire/review after approximately 30 days unless replaced by verified evidence. Uncertainty or age never moves a row to MANUAL_RESEARCH or HOLD; only a PAY_WORTH PAY HOLD does.
 
 - A later verified value immediately supersedes an estimate.
 
-- Missing pay must not hide a real role or block the daily brief indefinitely. If decision-changing, keep it MANUAL_RESEARCH/VERIFY COMP. If decision-irrelevant, mark VERIFY_LATER and proceed.
+- Missing pay means no posted pay and no estimate. Missing pay must not hide a real role or block the daily brief indefinitely. If decision-changing, keep it MANUAL_RESEARCH/VERIFY COMP. If decision-irrelevant, mark VERIFY_LATER and proceed.
 
 - Never estimate protected facts: exact requisition identity, APPLIED, REJECTED_BY_EMPLOYER, WITHDRAWN, CLOSED/DEAD, citizenship, security-clearance status, legal/work authorization, or whether a specific application was submitted.
 
@@ -167,7 +169,7 @@ FLEX_POLICY_PROSE_BEGIN
 - NO_FLEX: degree required without equivalency. Related field alone is not equivalency. Still pursue if adjusted fit is high and pay/title rules clear.
 - STRICT: degree required, no equivalency, single path only. Do not apply or mark APPLY NOW unless Tim explicitly overrides.
 - Equivalency triggers: or equivalent experience; equivalent experience accepted; or equivalent combination of education and experience; preferred, or equivalent experience. These map to HIGH_FLEX.
-- Scope/fit, then FLEX modifier, then pay floor and title rule. Adjusted fit = clamp(raw scope fit + FLEX modifier, 0, 100). Report class, modifier, adjusted score. Do not apply the modifier twice.
+- Scope/fit, then FLEX modifier, then PAY_WORTH status and title rule. Adjusted fit = clamp(raw scope fit + FLEX modifier, 0, 100). Report class, modifier, adjusted score. Do not apply the modifier twice.
 - Blank/unresearched requirements remain UNKNOWN. Placeholder text written before the requirements were read (alert or email excerpts, not extracted, to be captured) is unresearched. Intake degree/FLEX inputs: DEGREE_TEXT, FLEX_CLASS, FLEX_BASIS only. Writer owns calculated outputs.
 - Fresh degree evidence overrides stale FLEX = YES.
 - Tesla req 285047: Degree preferred, or equivalent experience => HIGH_FLEX +90.
@@ -185,7 +187,7 @@ OWNERSHIP_VERSION=OWNERSHIP_20261007
 - Scope can be the site or a clearly defined large part of a site. A large part is a major shop, module, process area, or production plus maintenance plus engineering for that area.
 - Safety, people, quality, delivery, and cost count only if they end on that person. Launch and ramp of that area use the same test.
 - Report one form: SITE = unshared ownership of the plant or site; LARGE_PART = unshared ownership of a clearly defined large piece (not being plant GM is not a fail); NOT_OWNERSHIP = matrix influence, partnership language, a shared KPI, staff governance, audit, or technical support. Partial influence on a shop does not count.
-- Pay floor and title rule still apply after the ownership test.
+- PAY_WORTH status and title rule still apply after the ownership test.
 - OWNERSHIP_20261007 supersedes any scoring that treats ownership as full-site only.
 SECTION=TITLE_SCOPE_FIT
 
