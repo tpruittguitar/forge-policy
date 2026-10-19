@@ -123,6 +123,10 @@ SECTION=COMPENSATION_ESTIMATION
 
 - Perfect pay data is not required. Transparent uncertainty is required.
 
+- SALARY RULE (Tim 2026-10-19 01:34 ET): an estimated salary is a real salary. Show it and use it everywhere: popup, table, drawer, scoring and decisions. Never treat it as PAY UNKNOWN, and never hold or stop a job because its pay is estimated. PAY UNKNOWN only when there is no posted pay and no estimate.
+
+- An estimate is real pay for display, scoring, floor check and decisions. Hold on pay only when the floor check is BELOW. Confidence lowers a label only. PAY UNKNOWN only with no posted pay and no estimate.
+
 - Source effort order: target employer/posting; employer-authored comparable role; credible pay-transparency/employer comparison; comparable company/title/scope/geography; role-specific recruiter/job-board claim; weaker market data only as sanity check.
 
 - Exact employer-posted target-role pay is VERIFIED, not an estimate.
@@ -135,13 +139,13 @@ SECTION=COMPENSATION_ESTIMATION
 
 - If no clean numeric anchor exists but credible evidence still supports directional judgment, an ESTIMATED / LOW value may be used only when its basis and uncertainty are explicit.
 
-- Aggregator-only or unsupported legacy numbers do not become verified compensation and must not be recycled as fact.
+- Aggregator-only or unsupported legacy numbers do not become verified compensation and must not be recycled as posted fact. They stay usable as ESTIMATED pay (basis and confidence recorded).
 
-- Every estimate used for a disposition records: ESTIMATED flag, range/value, HIGH/MED/LOW confidence, sources attempted, evidence/anchors, key uncertainty, whether uncertainty could change the disposition, governing rule, AS-OF date, and verification note. Compensation estimates expire/review after approximately 30 days unless replaced by verified evidence.
+- Every estimate used for a disposition records: ESTIMATED flag, range/value, HIGH/MED/LOW confidence, sources attempted, evidence/anchors, key uncertainty, whether uncertainty could change the disposition, governing rule, AS-OF date, and verification note. Compensation estimates expire/review after approximately 30 days unless replaced by verified evidence. Uncertainty or age never moves a row to MANUAL_RESEARCH or HOLD; only a BELOW floor check does.
 
 - A later verified value immediately supersedes an estimate.
 
-- Missing pay must not hide a real role or block the daily brief indefinitely. If decision-changing, keep it MANUAL_RESEARCH/VERIFY COMP. If decision-irrelevant, mark VERIFY_LATER and proceed.
+- Missing pay means no posted pay and no estimate. Missing pay must not hide a real role or block the daily brief indefinitely. If decision-changing, keep it MANUAL_RESEARCH/VERIFY COMP. If decision-irrelevant, mark VERIFY_LATER and proceed.
 
 - Never estimate protected facts: exact requisition identity, APPLIED, REJECTED_BY_EMPLOYER, WITHDRAWN, CLOSED/DEAD, citizenship, security-clearance status, legal/work authorization, or whether a specific application was submitted.
 
