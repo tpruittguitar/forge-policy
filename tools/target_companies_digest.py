@@ -9,8 +9,8 @@ sha = sys.argv[3] if len(sys.argv) > 3 else ''
 text = open(rules, encoding='utf-8').read()
 m = re.search(r'(?:^|\n)SECTION=TARGET_COMPANIES\s*\n([\s\S]*?)(?=\nSECTION=|\nEND TIM_PIPELINE_RULES_CANONICAL|$)', text)
 if not m: sys.exit('SECTION=TARGET_COMPANIES not found')
-order = ['P1', 'P2', 'P3', 'WATCH', 'PAUSED']
-cadence = {'P1': 'every discovery run', 'P2': 'at least daily', 'P3': 'rotating weekly coverage', 'WATCH': 'opportunistic', 'PAUSED': 'no targeted search'}
+order = ['DREAM', 'P1', 'P2', 'P3', 'WATCH', 'PAUSED']   # DREAM above P1 (Tim 2026-10-19, REV-040)
+cadence = {'DREAM': 'every discovery run, first', 'P1': 'every discovery run', 'P2': 'at least daily', 'P3': 'rotating weekly coverage', 'WATCH': 'opportunistic', 'PAUSED': 'no targeted search'}
 groups = {k: [] for k in order}; seen = set(); bad = 0
 for line in m.group(1).splitlines():
     x = re.match(r'^TARGET_COMPANY=(\{.*\})\s*$', line)
