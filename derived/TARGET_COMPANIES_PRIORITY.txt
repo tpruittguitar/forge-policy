@@ -1,6 +1,6 @@
 TARGET COMPANIES PRIORITY DIGEST (generated from canonical rules; do not edit, edit the registry in the Pipeline Explorer)
-SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 3356d19
-COMPANIES=44
+SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 3d06e42
+COMPANIES=45
 Priority sets discovery intensity and the culture score only. It never overrides pay, geography, FLEX, scope/fit, Never-Consider, protected states or dedupe.
 
 DREAM (every discovery run, first): 1
@@ -16,7 +16,7 @@ P1 (every discovery run): 8
 - AEVEX | careers: https://job-boards.greenhouse.io/aevexaerospace | Tampa, FL (manufacturing); Solana Beach, CA (HQ); Ohio; Virginia; Alabama
 - Path Robotics | careers: UNKNOWN | Columbus, OH (HQ / production)
 
-P2 (at least daily): 13
+P2 (at least daily): 14
 - True Anomaly | careers: https://trueanomaly.space/careers | Centennial, CO (GravityWorks factory)
 - Hadrian | careers: https://hadrian.co/careers | Torrance, CA (HQ); Mesa, AZ (Factory 3); Alabama (operations)
 - Swarm Aero | careers: https://swarm.aero/careers | Oxnard, CA (HQ); Fayetteville, AR (manufacturing center)
@@ -30,6 +30,7 @@ P2 (at least daily): 13
 - Heven AeroTech | careers: https://hevenaerotech.com/careers | Bingen, WA; Dallesport, WA; Winchester, VA (plant)
 - Ursa Space Systems | careers: https://ursaspace.com/careers | Ithaca, NY (HQ)
 - E-Space | careers: https://jobs.lever.co/espace | Arlington, TX (satellite manufacturing)
+- Hermeus | careers: https://jobs.lever.co/hermeus | El Segundo / Los Angeles, CA (HQ; 65,000 sq ft HQ planned to open early 2027; final prototype integration); Doraville (Atlanta), GA (The Factory, 110,000 sq ft; production hub for parts, subsystems and structures; 160+ employees); New Mexico (flight test)
 
 P3 (rotating weekly coverage): 17
 - Alta Ares | careers: https://altaares.com/careers | Paris, France (HQ)
