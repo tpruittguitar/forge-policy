@@ -85,6 +85,19 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 
 - Only Tim may activate, retire, edit, or override a Never-Consider category. Preserve retired RULE_IDs for historical metrics.
 
+SECTION=GLOBAL_PHARMA_MEDICAL_EXCLUSION
+RULING_ID=ASK-20261023-CLAUDE-1312
+OWNER=Tim
+DECISION=APPROVED_GLOBAL_EXCLUSION
+REASON=NEVER_CONSIDER — PHARMA_MEDICAL
+
+- Exclude employers whose PRIMARY business is pharmaceuticals, medical-device development or manufacturing, medical/healthcare services, hospitals, healthcare delivery, diagnostics or therapeutic healthcare products and services. This rule applies consistently in discovery, manual and automated intake, enrichment, scoring, ranking, recommendations, resurfacing, and every other active pipeline lane.
+- Classification is employer-primary-business based. Do not exclude diversified industrial manufacturers, automation firms, component suppliers or industrial equipment makers solely because healthcare organizations buy their products. For recruiting agencies, use the identified CLIENT employer's primary business; when the client is unknown, mark REVIEW_NEEDED rather than assume.
+- Identified matching employers must not enter or re-enter active consideration through alternate sources, changed URLs, duplicate listings, cached rankings or another AI provider. Track excluded discoveries with the exact reason NEVER_CONSIDER — PHARMA_MEDICAL and supporting primary-business evidence. Do not use title-keyword matching as a substitute for employer classification.
+- Existing matching active master rows must be excluded from active evaluation through an authorized Writer disposition, without deletion, and with row-specific receipts and identity verification. Preserve original rows, previously recorded applications, rejections, Tim decisions, audit history and terminal protections; never overwrite protected application state merely to impose an exclusion. Historical protected records remain preserved but invisible to active recommendations.
+- Ambiguous employer primary business is a held review, never an unsupported affirmative classification. Ruling authorized 2026-10-24; apply to all AI providers ChatGPT, Claude and Grok.
+- Regression invariant: each entry point and any ranking/resurfacing path must suppress confidently classified excluded employers; history and status remain unchanged.
+
 SECTION=COMPENSATION_GEOGRAPHY
 
 HOME_PIN=Cleveland, Tennessee
