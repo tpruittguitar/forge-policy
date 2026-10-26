@@ -1,10 +1,10 @@
 TARGET COMPANIES PRIORITY DIGEST (generated from canonical rules; do not edit, edit the registry in the Pipeline Explorer)
-SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 9822bc8
+SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 045211c
 COMPANIES=105
 Priority sets discovery intensity and the culture score only. It never overrides pay, geography, FLEX, scope/fit, Never-Consider, protected states or dedupe.
 
 DREAM (every discovery run, first): 1
-- Shield AI | careers: https://shield.ai/careers | Dallas, TX area (V-BAT production, Batcave); Hyderabad, India (planned production hub)
+- Shield AI | careers: https://shield.ai/careers | Dallas, TX area (V-BAT production, Batcave); Hyderabad, India (planned production hub); Des Moines, WA (X-BAT production, X-Forge 3; construction underway; production planned 2029, full rate early 2030s); Newton, KS (X-BAT flight test and sustainment, X-Forge 2, Newton City-County Airport)
 
 P1 (every discovery run): 5
 - Tesla | careers: https://www.tesla.com/careers | Austin, TX (Giga Texas); Brookshire, TX (Megafactory); Fremont, CA; Sparks, NV (Giga Nevada); Lathrop, CA (Megafactory)
