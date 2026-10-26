@@ -1,12 +1,12 @@
 TARGET COMPANIES PRIORITY DIGEST (generated from canonical rules; do not edit, edit the registry in the Pipeline Explorer)
-SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 8c455c1
-COMPANIES=67
+SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 46c0c26
+COMPANIES=105
 Priority sets discovery intensity and the culture score only. It never overrides pay, geography, FLEX, scope/fit, Never-Consider, protected states or dedupe.
 
 DREAM (every discovery run, first): 1
 - Shield AI | careers: https://shield.ai/careers | Dallas, TX area (V-BAT production, Batcave); Hyderabad, India (planned production hub)
 
-P1 (every discovery run): 11
+P1 (every discovery run): 15
 - PDW | careers: https://pdw.ai/careers | Huntsville, AL (Drone Factory 01)
 - Tesla | careers: https://www.tesla.com/careers | Austin, TX (Giga Texas); Brookshire, TX (Megafactory); Fremont, CA; Sparks, NV (Giga Nevada); Lathrop, CA (Megafactory)
 - SpaceX | careers: https://www.spacex.com/careers | Starbase, TX (Starship); Bastrop, TX (Starlink); McGregor, TX (engine test); Hawthorne, CA (HQ/manufacturing); Cape Canaveral, FL
@@ -18,8 +18,12 @@ P1 (every discovery run): 11
 - Honda | careers: https://careers.honda.com | Marysville, OH; East Liberty, OH; Lincoln, AL; Greensburg, IN
 - Rivian | careers: https://careers.rivian.com | Normal, IL; Georgia (planned plant)
 - Ford Motor Company | careers: https://corporate.ford.com/careers.html | BlueOval City, Stanton TN; Louisville, KY; Kansas City, MO; Chicago, IL; Dearborn and Wayne, MI; Flat Rock, MI
+- Saronic | careers: UNKNOWN | Austin, TX (HQ); Franklin, LA (shipyard, $300M expansion); Brownsville, TX (Port Alpha shipyard, under construction)
+- Apptronik | careers: UNKNOWN | Austin, TX
+- Figure AI | careers: UNKNOWN | San Jose, CA (HQ / BotQ)
+- Archer Aviation | careers: UNKNOWN | San Jose, CA (HQ); Covington, GA (manufacturing)
 
-P2 (at least daily): 21
+P2 (at least daily): 35
 - True Anomaly | careers: https://trueanomaly.space/careers | Centennial, CO (GravityWorks factory)
 - Hadrian | careers: https://hadrian.co/careers | Torrance, CA (HQ); Mesa, AZ (Factory 3); Alabama (operations)
 - Swarm Aero | careers: https://swarm.aero/careers | Oxnard, CA (HQ); Fayetteville, AR (manufacturing center)
@@ -41,8 +45,22 @@ P2 (at least daily): 21
 - Kia | careers: https://careers.kia.com | West Point, GA
 - Nissan | careers: https://careers.nissanusa.com | Smyrna, TN; Canton, MS
 - Lucid | careers: https://lucidmotors.com/careers | Casa Grande, AZ
+- Castelion | careers: UNKNOWN | Torrance, CA (HQ)
+- Mach Industries | careers: UNKNOWN | Huntington Beach, CA
+- X-Bow Systems | careers: UNKNOWN | Luling, TX (production, verify)
+- Ursa Major | careers: UNKNOWN | Berthoud, CO
+- Firehawk Aerospace | careers: UNKNOWN | Dallas, TX
+- CesiumAstro | careers: UNKNOWN | Austin, TX
+- K2 Space | careers: UNKNOWN | Torrance, CA
+- Apex | careers: UNKNOWN | Los Angeles, CA
+- Electra.Aero | careers: UNKNOWN | Manassas, VA (HQ); Springfield, OH (planned plant)
+- JetZero | careers: UNKNOWN | Long Beach, CA (HQ); Greensboro, NC (planned plant, verify)
+- Agility Robotics | careers: UNKNOWN | Salem, OR (RoboFab)
+- Mind Robotics | careers: UNKNOWN | 
+- Divergent Technologies | careers: UNKNOWN | Torrance, CA
+- Firestorm Labs | careers: UNKNOWN | San Diego, CA
 
-P3 (rotating weekly coverage): 23
+P3 (rotating weekly coverage): 41
 - Alta Ares | careers: https://altaares.com/careers | Paris, France (HQ)
 - Quantum Systems | careers: https://quantum-systems.com/careers | Gilching (Munich), Germany (HQ / production); Moorpark, CA (US production)
 - Neros Technologies | careers: https://neros.tech/careers | El Segundo, CA (HQ / factory)
@@ -66,8 +84,26 @@ P3 (rotating weekly coverage): 23
 - Mazda | careers: https://www.mazdausa.com/careers | Huntsville, AL
 - Volvo Cars | careers: https://www.volvocars.com/us/careers | Ridgeville, SC
 - Stellantis | careers: https://www.stellantis.com/en/careers | Warren, MI; Sterling Heights, MI; Detroit (Jefferson North), MI; Toledo, OH; Belvidere, IL
+- Epirus | careers: UNKNOWN | Torrance, CA
+- CHAOS Industries | careers: UNKNOWN | Los Angeles, CA
+- Overland AI | careers: UNKNOWN | Seattle, WA
+- Forterra | careers: UNKNOWN | Clarksburg, MD
+- Saildrone | careers: UNKNOWN | Alameda, CA
+- Varda Space Industries | careers: UNKNOWN | El Segundo, CA
+- Impulse Space | careers: UNKNOWN | Redondo Beach, CA
+- Stoke Space | careers: UNKNOWN | Kent, WA
+- Relativity Space | careers: UNKNOWN | Long Beach, CA
+- Astranis | careers: UNKNOWN | San Francisco, CA
+- Joby Aviation | careers: UNKNOWN | Santa Cruz / Marina, CA; Dayton, OH
+- Beta Technologies | careers: UNKNOWN | South Burlington, VT
+- 1X | careers: UNKNOWN | Palo Alto, CA
+- Standard Bots | careers: UNKNOWN | Glen Cove, NY
+- Formic | careers: UNKNOWN | Chicago, IL
+- Dexterity | careers: UNKNOWN | Redwood City, CA
+- Gecko Robotics | careers: UNKNOWN | Pittsburgh, PA
+- Zipline | careers: UNKNOWN | South San Francisco, CA; Dallas, TX (operations)
 
-WATCH (opportunistic): 7
+WATCH (opportunistic): 9
 - Auterion | careers: https://auterion.com/careers | Arlington, VA (HQ); Zurich, Switzerland (engineering); Munich, Germany (engineering)
 - Daimler Truck North America | careers: https://www.daimlertruck.com/en/career | Cleveland, NC; Mount Holly, NC; Portland, OR
 - Volvo Group North America | careers: https://www.volvogroup.com/en/careers.html | Dublin, VA; Macungie, PA
@@ -75,6 +111,8 @@ WATCH (opportunistic): 7
 - PACCAR | careers: https://www.paccar.com/careers | Chillicothe, OH; Denton, TX; Renton, WA
 - Oshkosh Corporation | careers: https://oshkoshcorp.com/careers | Oshkosh, WI
 - Blue Bird | careers: https://www.blue-bird.com/careers | Fort Valley, GA
+- Bedrock Robotics | careers: UNKNOWN | San Francisco, CA
+- Darkhive | careers: UNKNOWN | San Antonio, TX
 
 PAUSED (no targeted search): 4
 - Machina Labs | careers: https://machinalabs.ai/careers | Chatsworth (Los Angeles), CA (HQ / factory)
