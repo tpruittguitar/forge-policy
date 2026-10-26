@@ -1,12 +1,12 @@
 TARGET COMPANIES PRIORITY DIGEST (generated from canonical rules; do not edit, edit the registry in the Pipeline Explorer)
-SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ e1d4b22
-COMPANIES=46
+SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 8c455c1
+COMPANIES=67
 Priority sets discovery intensity and the culture score only. It never overrides pay, geography, FLEX, scope/fit, Never-Consider, protected states or dedupe.
 
 DREAM (every discovery run, first): 1
 - Shield AI | careers: https://shield.ai/careers | Dallas, TX area (V-BAT production, Batcave); Hyderabad, India (planned production hub)
 
-P1 (every discovery run): 8
+P1 (every discovery run): 11
 - PDW | careers: https://pdw.ai/careers | Huntsville, AL (Drone Factory 01)
 - Tesla | careers: https://www.tesla.com/careers | Austin, TX (Giga Texas); Brookshire, TX (Megafactory); Fremont, CA; Sparks, NV (Giga Nevada); Lathrop, CA (Megafactory)
 - SpaceX | careers: https://www.spacex.com/careers | Starbase, TX (Starship); Bastrop, TX (Starlink); McGregor, TX (engine test); Hawthorne, CA (HQ/manufacturing); Cape Canaveral, FL
@@ -15,8 +15,11 @@ P1 (every discovery run): 8
 - Allen Control Systems | careers: https://job-boards.greenhouse.io/allencontrolsystems | Austin, TX area (production, 57,000+ sq ft expansion); Huntsville, AL (innovation lab at UAH)
 - AEVEX | careers: https://job-boards.greenhouse.io/aevexaerospace | Tampa, FL (manufacturing); Solana Beach, CA (HQ); Ohio; Virginia; Alabama
 - Path Robotics | careers: UNKNOWN | Columbus, OH (HQ / production)
+- Honda | careers: https://careers.honda.com | Marysville, OH; East Liberty, OH; Lincoln, AL; Greensburg, IN
+- Rivian | careers: https://careers.rivian.com | Normal, IL; Georgia (planned plant)
+- Ford Motor Company | careers: https://corporate.ford.com/careers.html | BlueOval City, Stanton TN; Louisville, KY; Kansas City, MO; Chicago, IL; Dearborn and Wayne, MI; Flat Rock, MI
 
-P2 (at least daily): 15
+P2 (at least daily): 21
 - True Anomaly | careers: https://trueanomaly.space/careers | Centennial, CO (GravityWorks factory)
 - Hadrian | careers: https://hadrian.co/careers | Torrance, CA (HQ); Mesa, AZ (Factory 3); Alabama (operations)
 - Swarm Aero | careers: https://swarm.aero/careers | Oxnard, CA (HQ); Fayetteville, AR (manufacturing center)
@@ -32,8 +35,14 @@ P2 (at least daily): 15
 - E-Space | careers: https://jobs.lever.co/espace | Arlington, TX (satellite manufacturing)
 - Hermeus | careers: https://jobs.lever.co/hermeus | El Segundo / Los Angeles, CA (HQ; 65,000 sq ft HQ planned to open early 2027; final prototype integration); Doraville (Atlanta), GA (The Factory, 110,000 sq ft; production hub for parts, subsystems and structures; 160+ employees); New Mexico (flight test)
 - Cowboy Space Corporation | careers: https://jobs.ashbyhq.com/cowboyspace | San Carlos, CA (HQ)
+- Hyundai Motor | careers: https://careers.hyundai.com | Montgomery, AL; Ellabell, GA (Metaplant)
+- Mercedes-Benz | careers: https://group.mercedes-benz.com/careers | Vance (Tuscaloosa County), AL
+- Toyota | careers: https://www.toyota.com/usa/careers | Georgetown, KY; Princeton, IN; San Antonio, TX; Blue Springs, MS; Huntsville, AL (engines)
+- Kia | careers: https://careers.kia.com | West Point, GA
+- Nissan | careers: https://careers.nissanusa.com | Smyrna, TN; Canton, MS
+- Lucid | careers: https://lucidmotors.com/careers | Casa Grande, AZ
 
-P3 (rotating weekly coverage): 17
+P3 (rotating weekly coverage): 23
 - Alta Ares | careers: https://altaares.com/careers | Paris, France (HQ)
 - Quantum Systems | careers: https://quantum-systems.com/careers | Gilching (Munich), Germany (HQ / production); Moorpark, CA (US production)
 - Neros Technologies | careers: https://neros.tech/careers | El Segundo, CA (HQ / factory)
@@ -51,9 +60,21 @@ P3 (rotating weekly coverage): 17
 - TEKEVER | careers: https://tekever.com/careers | Caldas da Rainha, Portugal; Ponte de Sor, Portugal; Swindon, UK (planned AR5 factory)
 - Raphe Mphibr | careers: https://raphe.com/careers | Noida, Uttar Pradesh, India (manufacturing)
 - TAR | careers: https://jobs.ashbyhq.com/tar | Austin, TX (HQ); West Texas (manufacturing/logistics); San Francisco, CA (engineering/robotics)
+- General Motors | careers: https://search-careers.gm.com | Spring Hill, TN; Arlington, TX; Fort Wayne, IN; Wentzville, MO; Flint, MI; Detroit-Hamtramck, MI; Lansing, MI; Bowling Green, KY; Fairfax, KS
+- BMW Group | careers: https://www.bmwgroup.jobs | Spartanburg, SC
+- Subaru | careers: https://careers.subaru.com | Lafayette, IN
+- Mazda | careers: https://www.mazdausa.com/careers | Huntsville, AL
+- Volvo Cars | careers: https://www.volvocars.com/us/careers | Ridgeville, SC
+- Stellantis | careers: https://www.stellantis.com/en/careers | Warren, MI; Sterling Heights, MI; Detroit (Jefferson North), MI; Toledo, OH; Belvidere, IL
 
-WATCH (opportunistic): 1
+WATCH (opportunistic): 7
 - Auterion | careers: https://auterion.com/careers | Arlington, VA (HQ); Zurich, Switzerland (engineering); Munich, Germany (engineering)
+- Daimler Truck North America | careers: https://www.daimlertruck.com/en/career | Cleveland, NC; Mount Holly, NC; Portland, OR
+- Volvo Group North America | careers: https://www.volvogroup.com/en/careers.html | Dublin, VA; Macungie, PA
+- Traton (Navistar International) | careers: https://www.internationalmotors.com/careers | Springfield, OH; San Antonio, TX; Huntsville, AL (engines)
+- PACCAR | careers: https://www.paccar.com/careers | Chillicothe, OH; Denton, TX; Renton, WA
+- Oshkosh Corporation | careers: https://oshkoshcorp.com/careers | Oshkosh, WI
+- Blue Bird | careers: https://www.blue-bird.com/careers | Fort Valley, GA
 
 PAUSED (no targeted search): 4
 - Machina Labs | careers: https://machinalabs.ai/careers | Chatsworth (Los Angeles), CA (HQ / factory)
