@@ -1,12 +1,12 @@
 TARGET COMPANIES PRIORITY DIGEST (generated from canonical rules; do not edit, edit the registry in the Pipeline Explorer)
-SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 1fa998e
+SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 007541f
 COMPANIES=105
 Priority sets discovery intensity and the culture score only. It never overrides pay, geography, FLEX, scope/fit, Never-Consider, protected states or dedupe.
 
 DREAM (every discovery run, first): 1
 - Shield AI | careers: https://shield.ai/careers | Dallas, TX area (V-BAT production, Batcave); Hyderabad, India (planned production hub)
 
-P1 (every discovery run): 8
+P1 (every discovery run): 10
 - PDW | careers: https://pdw.ai/careers | Huntsville, AL (Drone Factory 01)
 - Tesla | careers: https://www.tesla.com/careers | Austin, TX (Giga Texas); Brookshire, TX (Megafactory); Fremont, CA; Sparks, NV (Giga Nevada); Lathrop, CA (Megafactory)
 - SpaceX | careers: https://www.spacex.com/careers | Starbase, TX (Starship); Bastrop, TX (Starlink); McGregor, TX (engine test); Hawthorne, CA (HQ/manufacturing); Cape Canaveral, FL
@@ -15,8 +15,10 @@ P1 (every discovery run): 8
 - Allen Control Systems | careers: https://job-boards.greenhouse.io/allencontrolsystems | Austin, TX area (production, 57,000+ sq ft expansion); Huntsville, AL (innovation lab at UAH)
 - AEVEX | careers: https://job-boards.greenhouse.io/aevexaerospace | Tampa, FL (manufacturing); Solana Beach, CA (HQ); Ohio; Virginia; Alabama
 - Path Robotics | careers: UNKNOWN | Columbus, OH (HQ / production)
+- Honda | careers: https://careers.honda.com | Marysville, OH; East Liberty, OH; Lincoln, AL; Greensburg, IN
+- Saronic | careers: UNKNOWN | Austin, TX (HQ); Franklin, LA (shipyard, $300M expansion); Brownsville, TX (Port Alpha shipyard, under construction)
 
-P2 (at least daily): 42
+P2 (at least daily): 40
 - True Anomaly | careers: https://trueanomaly.space/careers | Centennial, CO (GravityWorks factory)
 - Hadrian | careers: https://hadrian.co/careers | Torrance, CA (HQ); Mesa, AZ (Factory 3); Alabama (operations)
 - Swarm Aero | careers: https://swarm.aero/careers | Oxnard, CA (HQ); Fayetteville, AR (manufacturing center)
@@ -32,7 +34,6 @@ P2 (at least daily): 42
 - E-Space | careers: https://jobs.lever.co/espace | Arlington, TX (satellite manufacturing)
 - Hermeus | careers: https://jobs.lever.co/hermeus | El Segundo / Los Angeles, CA (HQ; 65,000 sq ft HQ planned to open early 2027; final prototype integration); Doraville (Atlanta), GA (The Factory, 110,000 sq ft; production hub for parts, subsystems and structures; 160+ employees); New Mexico (flight test)
 - Cowboy Space Corporation | careers: https://jobs.ashbyhq.com/cowboyspace | San Carlos, CA (HQ)
-- Honda | careers: https://careers.honda.com | Marysville, OH; East Liberty, OH; Lincoln, AL; Greensburg, IN
 - Rivian | careers: https://careers.rivian.com | Normal, IL; Georgia (planned plant)
 - Ford Motor Company | careers: https://corporate.ford.com/careers.html | BlueOval City, Stanton TN; Louisville, KY; Kansas City, MO; Chicago, IL; Dearborn and Wayne, MI; Flat Rock, MI
 - Hyundai Motor | careers: https://careers.hyundai.com | Montgomery, AL; Ellabell, GA (Metaplant)
@@ -41,7 +42,6 @@ P2 (at least daily): 42
 - Kia | careers: https://careers.kia.com | West Point, GA
 - Nissan | careers: https://careers.nissanusa.com | Smyrna, TN; Canton, MS
 - Lucid | careers: https://lucidmotors.com/careers | Casa Grande, AZ
-- Saronic | careers: UNKNOWN | Austin, TX (HQ); Franklin, LA (shipyard, $300M expansion); Brownsville, TX (Port Alpha shipyard, under construction)
 - Apptronik | careers: UNKNOWN | Austin, TX
 - Figure AI | careers: UNKNOWN | San Jose, CA (HQ / BotQ)
 - Archer Aviation | careers: UNKNOWN | San Jose, CA (HQ); Covington, GA (manufacturing)
