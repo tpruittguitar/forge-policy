@@ -1,12 +1,12 @@
 TARGET COMPANIES PRIORITY DIGEST (generated from canonical rules; do not edit, edit the registry in the Pipeline Explorer)
-SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 007541f
+SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 3e79c97
 COMPANIES=105
 Priority sets discovery intensity and the culture score only. It never overrides pay, geography, FLEX, scope/fit, Never-Consider, protected states or dedupe.
 
 DREAM (every discovery run, first): 1
 - Shield AI | careers: https://shield.ai/careers | Dallas, TX area (V-BAT production, Batcave); Hyderabad, India (planned production hub)
 
-P1 (every discovery run): 10
+P1 (every discovery run): 9
 - PDW | careers: https://pdw.ai/careers | Huntsville, AL (Drone Factory 01)
 - Tesla | careers: https://www.tesla.com/careers | Austin, TX (Giga Texas); Brookshire, TX (Megafactory); Fremont, CA; Sparks, NV (Giga Nevada); Lathrop, CA (Megafactory)
 - SpaceX | careers: https://www.spacex.com/careers | Starbase, TX (Starship); Bastrop, TX (Starlink); McGregor, TX (engine test); Hawthorne, CA (HQ/manufacturing); Cape Canaveral, FL
@@ -15,7 +15,6 @@ P1 (every discovery run): 10
 - Allen Control Systems | careers: https://job-boards.greenhouse.io/allencontrolsystems | Austin, TX area (production, 57,000+ sq ft expansion); Huntsville, AL (innovation lab at UAH)
 - AEVEX | careers: https://job-boards.greenhouse.io/aevexaerospace | Tampa, FL (manufacturing); Solana Beach, CA (HQ); Ohio; Virginia; Alabama
 - Path Robotics | careers: UNKNOWN | Columbus, OH (HQ / production)
-- Honda | careers: https://careers.honda.com | Marysville, OH; East Liberty, OH; Lincoln, AL; Greensburg, IN
 - Saronic | careers: UNKNOWN | Austin, TX (HQ); Franklin, LA (shipyard, $300M expansion); Brownsville, TX (Port Alpha shipyard, under construction)
 
 P2 (at least daily): 40
@@ -60,7 +59,7 @@ P2 (at least daily): 40
 - Divergent Technologies | careers: UNKNOWN | Torrance, CA
 - Firestorm Labs | careers: UNKNOWN | San Diego, CA
 
-P3 (rotating weekly coverage): 49
+P3 (rotating weekly coverage): 50
 - Alta Ares | careers: https://altaares.com/careers | Paris, France (HQ)
 - Quantum Systems | careers: https://quantum-systems.com/careers | Gilching (Munich), Germany (HQ / production); Moorpark, CA (US production)
 - Neros Technologies | careers: https://neros.tech/careers | El Segundo, CA (HQ / factory)
@@ -78,6 +77,7 @@ P3 (rotating weekly coverage): 49
 - TEKEVER | careers: https://tekever.com/careers | Caldas da Rainha, Portugal; Ponte de Sor, Portugal; Swindon, UK (planned AR5 factory)
 - Raphe Mphibr | careers: https://raphe.com/careers | Noida, Uttar Pradesh, India (manufacturing)
 - TAR | careers: https://jobs.ashbyhq.com/tar | Austin, TX (HQ); West Texas (manufacturing/logistics); San Francisco, CA (engineering/robotics)
+- Honda | careers: https://careers.honda.com | Marysville, OH; East Liberty, OH; Lincoln, AL; Greensburg, IN
 - General Motors | careers: https://search-careers.gm.com | Spring Hill, TN; Arlington, TX; Fort Wayne, IN; Wentzville, MO; Flint, MI; Detroit-Hamtramck, MI; Lansing, MI; Bowling Green, KY; Fairfax, KS
 - BMW Group | careers: https://www.bmwgroup.jobs | Spartanburg, SC
 - Subaru | careers: https://careers.subaru.com | Lafayette, IN
