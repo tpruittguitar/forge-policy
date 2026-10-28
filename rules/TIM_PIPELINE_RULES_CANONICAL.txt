@@ -104,7 +104,7 @@ HOME_PIN=Cleveland, Tennessee
 
 LOCATION_METHOD=Tim's geo map score for the job's site (the scoring model's geo points; Tim edits them on the map).
 
-- PAY WORTH (Tim 2026-10-19 02:14 / 02:17 ET): pay is scored, not hard-floored. PAY_WORTH (0-100) compares the base-pay midpoint with what the place needs on Tim's geo map: NEED = $300,000 - $120,000 x geo score / 100 ($180,000 at geo 100, $300,000 at geo 0). A remote role is scored at home. PAY_WORTH = 100 / (1 + e^-((pay / NEED - 0.8525) / 0.085)), a smooth curve: pay at 70% of NEED = 14, 80% = 35, 90% = 64, 100% = 85, 120% = 98.
+- PAY WORTH (Tim 2026-10-19 02:14 / 02:17 ET; updated Tim 2026-10-28): pay is scored, not hard-floored. PAY_WORTH (0-100) compares 75% of the base-pay range (low + 0.75*(high-low), slightly higher than the midpoint) with what the place needs on Tim's geo map: NEED = $300,000 - $120,000 x geo score / 100 ($180,000 at geo 100, $300,000 at geo 0). A remote role is scored at home. PAY_WORTH = 100 / (1 + e^-((pay / NEED - 0.8525) / 0.085)), a smooth curve: pay at 70% of NEED = 14, 80% = 35, 90% = 64, 100% = 85, 120% = 98.
 
 - BASE PAY FLOOR (Tim 2026-10-23): a role whose base pay tops out under $190,000 a year is declined. Test the top of the range (SALARY_BASE_HIGH, else the single posted or estimated value), never the midpoint. Posted pay and FORGE estimates both count (estimates are real pay; see COMPENSATION_ESTIMATION). Hourly pay is annualized at 2,080 hours. Base only: bonus, equity and package adders do not lift a role over the floor. No pay at all is not a decline. The floor applies to active rows only; APPLIED, REJECTED_BY_EMPLOYER, DECLINED_BY_TIM, ANTI_RESURRECTION=YES, DO_NOT_REWORK, rows awaiting Tim (TIM_DECISION_REQUIRED, BLOCKED) and rows carrying a Tim ruling, override or note are never auto-declined. Decline: DECLINED_BY_TIM, DECLINE_REASON_CODE=PAY_BELOW_FLOOR, DECLINE_REASON_TEXT stating the pay evidence and its basis; reopen when newer posted or estimated base reaches $190,000. The floor sits beside PAY_WORTH: roles at or over it are still scored by PAY_WORTH as below.
 
@@ -114,7 +114,7 @@ LOCATION_METHOD=Tim's geo map score for the job's site (the scoring model's geo 
 
 - Tim tunes PAY_WORTH by changing geo map scores; the NEED range and cutoffs are settings in the scoring model.
 
-- Posted target-role base range is preferred. Midpoint = (low + high) / 2 where midpoint logic applies.
+- Posted target-role base range is preferred. For PAY_WORTH, use 75% of the range (low + 0.75*(high-low)), not the midpoint (Tim 2026-10-28).
 
 - Base pay is what PAY_WORTH scores. Bonus, equity, vehicle programs, and other package adders do not raise PAY_WORTH. Relocation support only removes a PAY HOLD (the role stays CHECK).
 
@@ -140,7 +140,7 @@ SECTION=COMPENSATION_ESTIMATION
 
 - An estimate is real pay for display, scoring, PAY_WORTH and decisions. Hold on pay only when PAY_WORTH is a PAY HOLD. Confidence lowers a label only. PAY UNKNOWN only with no posted pay and no estimate.
 
-- Source effort order: target employer/posting; employer-authored comparable role; credible pay-transparency/employer comparison; comparable company/title/scope/geography; role-specific recruiter/job-board claim; weaker market data only as sanity check.
+- Source effort order: target employer/posting; employer-authored comparable role; credible pay-transparency/employer comparison; comparable company/title/scope/geography; role-specific recruiter/job-board claim; weaker market data only as sanity check. When none of these yield a numeric anchor, BLS OEWS (or equivalent) is required as the last step (see REQUIRED UNANCHORED ESTIMATE).
 
 - Exact employer-posted target-role pay is VERIFIED, not an estimate.
 
@@ -150,7 +150,7 @@ SECTION=COMPENSATION_ESTIMATION
 
 - Three or more strong independent relevant anchors may support higher confidence under the same evidence logic.
 
-- If no clean numeric anchor exists but credible evidence still supports directional judgment, an ESTIMATED / LOW value may be used only when its basis and uncertainty are explicit.
+- REQUIRED UNANCHORED ESTIMATE (Tim 2026-10-28): if no clean numeric anchor exists, an ESTIMATED / LOW value is still required so the row can be scored and processed. Produce a RANGE that spans (a) BLS OEWS state wages for the role's occupation (P25-P90) and (b) any available text-based model point estimates (JobPredictor, nginyc, or another). Range low = min of BLS P25 and all model points; range high = max of BLS P90 and all model points. If no model points are available, the range is BLS P25-P90 and the basis states that. Prefer posted pay or anchored estimates when they exist. The value used for PAY_WORTH is 75% of the resulting range (low + 0.75*(high-low)). Confidence = LOW. An unanchored estimate is real pay for display, scoring, PAY_WORTH and the $190k floor.
 
 - Aggregator-only or unsupported legacy numbers do not become verified compensation and must not be recycled as posted fact. They stay usable as ESTIMATED pay (basis and confidence recorded).
 
