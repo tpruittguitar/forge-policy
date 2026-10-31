@@ -3,8 +3,8 @@
   "modelVersion": "2026-10-14.1",
   "weights": {
     "experience": 40,
-    "flex": 40,
-    "compensation": 10,
+    "flex": 30,
+    "compensation": 20,
     "geo": 0,
     "ats": 0,
     "title": 5,
@@ -171,11 +171,11 @@
     }
   },
   "resumeKeywords": "manufacturing, quality, operations, production, industrialization, launch, startup, greenfield, plant, process engineering, manufacturing engineering, torque, fastening, tool systems, tooling, dc electric, automation, robotics, ev, battery, supplier quality, continuous improvement, apqp, equipment, commissioning, validation, root cause, change control, plant floor, leader",
-  "publishedRevision": 29,
+  "publishedRevision": 30,
   "flexPolicy": null,
   "publishedBy": "TIM",
-  "requestId": "PX-1793463575172-TOQESPM",
-  "publishedAt": "2026-10-31T16:19:35.028Z",
-  "updatedAt": "2026-10-31T16:19:35.028Z",
+  "requestId": "PX-1793463587320-CQUPR9P",
+  "publishedAt": "2026-10-31T16:19:46.793Z",
+  "updatedAt": "2026-10-31T16:19:46.793Z",
   "weightTotal": 100
 }
