@@ -1,5 +1,5 @@
 TARGET COMPANIES PRIORITY DIGEST (generated from canonical rules; do not edit, edit the registry in the Pipeline Explorer)
-SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 09ce31c
+SOURCE=tpruittguitar/forge-policy/rules/TIM_PIPELINE_RULES_CANONICAL.txt @ 98f5cad
 COMPANIES=105
 Priority sets discovery intensity and the culture score only. It never overrides pay, geography, FLEX, scope/fit, Never-Consider, protected states or dedupe.
 
