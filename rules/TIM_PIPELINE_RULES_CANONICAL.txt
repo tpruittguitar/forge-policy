@@ -184,7 +184,7 @@ FLEX_POLICY_PROSE_BEGIN
 - NO_FLEX: degree required without equivalency. Related field alone is not equivalency. Still pursue if adjusted fit is high and pay/title rules clear.
 - STRICT: degree required, no equivalency, single path only. Do not apply or mark APPLY NOW unless Tim explicitly overrides.
 - Equivalency triggers: or equivalent experience; equivalent experience accepted; or equivalent combination of education and experience; preferred, or equivalent experience. These map to HIGH_FLEX.
-- Scope/fit, then FLEX modifier, then PAY_WORTH status and title rule. Adjusted fit = clamp(raw scope fit + FLEX modifier, 0, 100). Report class, modifier, adjusted score. Do not apply the modifier twice.
+- Scope/fit, then FLEX modifier, then pay floor and title rule. Adjusted fit = clamp(raw scope fit + FLEX modifier, 0, 100). Report class, modifier, adjusted score. Do not apply the modifier twice.
 - Blank/unresearched requirements remain UNKNOWN. Placeholder text written before the requirements were read (alert or email excerpts, not extracted, to be captured) is unresearched. Intake degree/FLEX inputs: DEGREE_TEXT, FLEX_CLASS, FLEX_BASIS only. Writer owns calculated outputs.
 - Fresh degree evidence overrides stale FLEX = YES.
 - Tesla req 285047: Degree preferred, or equivalent experience => HIGH_FLEX +90.
@@ -194,7 +194,6 @@ STRICT_ACTION=DO_NOT_APPLY
 
 - This policy save does not rescore rows, change buckets, identity or application history, submit a Tesla application, or rewrite historical enrich files.
 - This policy does not merge req 285047 onto V2I-628904CF5172. That ID stays on CyberCab req 285131.
-
 
 SECTION=OWNERSHIP
 OWNERSHIP_VERSION=OWNERSHIP_20261007
