@@ -75,6 +75,12 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 
 - NC-004 RESTAURANT_OR_FOOD_SERVICE: exclude before intake only when the employer's core business is restaurant, fast-food, quick-service, catering, food-service, or comparable consumer meal-service operations.
 
+- NC-005 FINANCIAL_AND_ACCOUNTING_ROLES: exclude roles whose primary function is finance or accounting, including financial management/analysis, accounting, bookkeeping, tax preparation/advisory, audit of financial statements, payroll accounting, treasury, and financial control. Apply to the actual role regardless of employer industry. A manufacturing/operations leader's budget, cost, or profit-and-loss accountability alone is not a finance/accounting role.
+
+- NC-006 PROPERTY_MANAGEMENT_ROLES: exclude roles whose primary function is residential or commercial real-estate property management, including rental/community management, leasing operations, tenant services, and real-estate portfolio management. Do not classify manufacturing plant facilities, industrial maintenance, plant operations, or manufacturing engineering leadership as property management solely because they manage a site, building, equipment, or capital assets.
+
+- NC-005 and NC-006 were authorized by Tim on 2026-11-06. Use source-bound title and responsibility evidence, not employer-name keywords alone; ambiguous role scope remains review-needed. Apply these role exclusions to discovery and captured backlog review, manual and automated intake, enrichment, ranking, recommendations and resurfacing. Record the matching RULE_ID and individual identity/evidence even when researching a batch. Existing active matching rows require an authorized Writer disposition; preserve historical rows, applications, rejections, Tim decisions and protected states. This policy edit itself does not change any canonical job row or establish that a backlog item has been processed.
+
 - Do not apply NC rules merely because an industrial supplier, equipment maker, automation/integration firm, software vendor, logistics provider, component supplier, consulting firm, or engineering firm serves one of those industries.
 
 - Every Never-Consider exclusion must be logged in Scout run metrics with RULE_ID, company, title, location, source, source URL, confidence, and reason.
