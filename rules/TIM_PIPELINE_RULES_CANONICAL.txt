@@ -104,6 +104,18 @@ REASON=NEVER_CONSIDER — PHARMA_MEDICAL
 - Ambiguous employer primary business is a held review, never an unsupported affirmative classification. Ruling authorized 2026-10-24; apply to all AI providers ChatGPT, Claude and Grok.
 - Regression invariant: each entry point and any ranking/resurfacing path must suppress confidently classified excluded employers; history and status remain unchanged.
 
+SECTION=GLOBAL_PROCESS_INDUSTRY_EXCLUSION
+RULING_ID=TIM-20261112-PROCESS-INDUSTRY
+OWNER=Tim
+DECISION=APPROVED_GLOBAL_EXCLUSION
+REASON=NEVER_CONSIDER — PROCESS_INDUSTRY
+
+- Exclude employers whose PRIMARY business is process-industry bulk chemical production, refining, or raw-material production. Apply this employer-business rule consistently in discovery, manual and automated intake, enrichment, scoring, ranking, recommendations and resurfacing.
+- Do not exclude discrete manufacturing such as stamping, molding or machining merely because it processes materials. Do not exclude industrial suppliers, diversified manufacturers, automation firms, component suppliers or equipment makers solely because they serve an excluded industry. Generic job-title, product, customer or materials keywords are not employer-primary-business evidence.
+- Reuse saved job descriptions and reviewed company-business evidence. This rule does not add a mandatory employer-site lookup or hold unknowns out of intake. Unconfirmed, conflicting or unidentified business remains visible and progresses under existing lane rules; flag the uncertainty without inferring an exclusion. For agencies, classify only the identified client from supported evidence.
+- Record exact employer identity, source evidence and this rule binding for confirmed matches. Preserve applications, terminal history, anti-resurrection protections and explicit Tim decisions. Existing-row dispositions use the authorized Writer path with identity checks, receipts and independent readback; this policy does not authorize deletion or replay of uncertain writes.
+- Ruling source: Tim's November 12 chemical/material-processing exclusion and scope clarification. Activation of the shared company-business evaluator remains a separate deployment setting; unreviewed employer classifications must not be inferred from the category labels.
+
 SECTION=COMPENSATION_GEOGRAPHY
 
 HOME_PIN=Cleveland, Tennessee
