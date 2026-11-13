@@ -160,13 +160,23 @@ SECTION=COMPENSATION_ESTIMATION
 
 - Source effort order: target employer/posting; employer-authored comparable role; credible pay-transparency/employer comparison; comparable company/title/scope/geography; role-specific recruiter/job-board claim; weaker market data only as sanity check. When none of these yield a numeric anchor, BLS OEWS (or equivalent) is required as the last step (see REQUIRED UNANCHORED ESTIMATE).
 
+- PAY SAMPLE MATCH (Tim 2026-11-13): a pay sample is a comparable for a target role when it matches on level, function, industry, company size, and scope (team size, direct reports, number of sites / reach).
+
+- A known mismatch on industry, company size band, or scope excludes the sample, on the same terms as a known mismatch on management or reach.
+
+- When industry, company size, or scope is unknown for the role or the sample, the sample stays in at reduced weight. The missing-fact weight is 0.75.
+
+- Industry comes first from the company registry `builds` field (SECTION=TARGET_COMPANIES in this file, shown as "what they build" on the Pipeline Explorer Companies page). For a company outside the registry, industry comes from the company overview in the posting text. Free text is matched to an industry label. A weak match counts as unknown, and the sample stays in at the missing-fact weight. Company size and scope come from the posting text the pipeline already opens (the posting at discovery, and saved posting text for a pay-pool sample). No extra AI call or web lookup fills industry, company size, or scope.
+
+- A role with no qualifying comparable uses the existing BLS-only range (REQUIRED UNANCHORED ESTIMATE). Confidence on that range is LOW.
+
 - Exact employer-posted target-role pay is VERIFIED, not an estimate.
 
-- One relevant numeric employer-posted comparable may support a provisional LOW-confidence estimate.
+- One numeric employer-posted comparable under PAY SAMPLE MATCH may support a provisional LOW-confidence estimate.
 
-- Two relevant numeric comparables, including at least one strong employer-posted band, may support a qualified estimate; LOW by default, MED when the role/geo match is close and corroboration is strong.
+- Two numeric comparables under PAY SAMPLE MATCH, including at least one strong employer-posted band, may support a qualified estimate; LOW by default, MED when the role/geo match is close and corroboration is strong.
 
-- Three or more strong independent relevant anchors may support higher confidence under the same evidence logic.
+- Three or more strong independent anchors under PAY SAMPLE MATCH may support higher confidence under the same evidence logic.
 
 - REQUIRED UNANCHORED ESTIMATE (Tim 2026-10-28): if no clean numeric anchor exists, an ESTIMATED / LOW value is still required so the row can be scored and processed. BLS OEWS is the last step in the existing evidence ladder. Range = 30% to 110% of the BLS P25-P90 span for the role's state and occupation: low = P25 + 0.30*(P90-P25), high = P25 + 1.10*(P90-P25). If a text-based model point (JobPredictor, nginyc, or another) is available, the range also spans that point. If the BLS series is not in cache, fetch it before leaving the row without an estimate. Prefer posted pay or anchored estimates when they exist. PAY_WORTH uses 75% of the resulting range (low + 0.75*(high-low)). Confidence = LOW. An unanchored estimate is real pay for display, scoring, PAY_WORTH and the $190k floor.
 
