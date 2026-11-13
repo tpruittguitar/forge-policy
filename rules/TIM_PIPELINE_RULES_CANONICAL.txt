@@ -166,7 +166,7 @@ SECTION=COMPENSATION_ESTIMATION
 
 - When industry, company size, or scope is unknown for the role or the sample, the sample stays in at reduced weight. The missing-fact weight is 0.75.
 
-- Industry comes first from the company registry `builds` field (SECTION=TARGET_COMPANIES in this file, shown as "what they build" on the Pipeline Explorer Companies page). For a company outside the registry, industry comes from the company overview in the posting text. Free text is matched to an industry label. A weak match counts as unknown, and the sample stays in at the missing-fact weight. Company size and scope come from the posting text the pipeline already opens (the posting at discovery, and saved posting text for a pay-pool sample). No extra AI call or web lookup fills industry, company size, or scope.
+- Industry is read in this order: the company registry `builds` field (SECTION=TARGET_COMPANIES; shown as "what they build" on the Pipeline Explorer Companies page); the master job row's `EMPLOYER_PRIMARY_BUSINESS` value; the company overview in the posting text. Free text from any source is matched to an industry label. When no source gives a clear match (empty, raw pasted job-description text, or a weak match), industry counts as unknown and the sample stays in at the missing-fact weight. Company size and scope come from the posting text the pipeline already opens (the posting at discovery, and saved posting text for a pay-pool sample). No extra AI call or web lookup fills industry, company size, or scope.
 
 - A role with no qualifying comparable uses the existing BLS-only range (REQUIRED UNANCHORED ESTIMATE). Confidence on that range is LOW.
 
