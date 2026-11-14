@@ -103,21 +103,21 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 
 - NC-018 INSURANCE_AND_BPO: Insurance and BPO/outsourcing employers. ruling=TIM-20261114 (Root declined-jobs review).
 
-- NC-019 PROGRAM_PROJECT_MANAGEMENT: Program/project management titles. ruling=TIM-20261114 (Root declined-jobs review).
+- NC-019 PROGRAM_PROJECT_MANAGEMENT: Program/project management titles. Manufacturing and energy employers are exempt. ruling=TIM-20261114 (Root declined-jobs review).
 
-- NC-020 IC_ENGINEER: titles containing "Engineer" with no manager or leadership level. Titles containing "Staff Engineer" or "Principal Engineer" are exempt and must never be declined by that rule. This covers Staff, Senior Staff and Principal. ruling=TIM-20261114 (Root declined-jobs review).
+- NC-020 IC_ENGINEER: titles containing Engineer, Technician, Inspector, Analyst, Scientist or Specialist with no manager or leadership level. Titles containing Staff Engineer, Senior Staff Engineer or Principal Engineer stay exempt and must never be declined by this rule. ruling=TIM-20261114 (Root declined-jobs review).
 
-- NC-021 FIRST_LINE: the titles Supervisor, Group Leader and Associate Manager only. ruling=TIM-20261114 (Root declined-jobs review).
+- NC-021 FIRST_LINE: Supervisor, Group Leader, Associate Manager, Area Manager, Team Lead, Shift Manager and Coordinator. ruling=TIM-20261114 (Root declined-jobs review).
 
-- NC-022 CONSTRUCTION_EPC: Construction and EPC contractors. ruling=TIM-20261114 (Root declined-jobs review).
+- NC-022 CONSTRUCTION_EPC: Construction and EPC contractors. Manufacturing and energy employers are exempt. ruling=TIM-20261114 (Root declined-jobs review).
 
-- NC-023 UPPER_MIDWEST_ONSITE: Onsite roles in Michigan, Wisconsin, Minnesota, Iowa and northern Illinois are excluded. Northern Illinois is defined by the Chicago-area city list. Remote and multi-location roles are exempt, the same as NC-013. These rows go to REVIEW_NEEDED for Tim, not EXCLUDE, when (a) posted base pay is $250,000 or more, or (c) the title is VP or higher, or the employer is a top-priority AI, defense, space or energy firm. ruling=TIM-20261114 (Root declined-jobs review).
+- NC-023 UPPER_MIDWEST_ONSITE: Onsite roles in Michigan, Wisconsin, Minnesota, Iowa and northern Illinois are excluded. Northern Illinois is defined by the Chicago-area city list. Remote and multi-location roles are exempt, the same as NC-013. These rows go to REVIEW_NEEDED for Tim, not EXCLUDE, when (a) posted base pay is $250,000 or more, or (c) the title is VP or higher, or the employer is a top-priority AI, defense, space or energy firm. "Head of" titles count as executive (VP or higher) for the REVIEW_NEEDED exception. ruling=TIM-20261114 (Root declined-jobs review).
 
 - NC-024 CENTENE: employer=Centene; rule=NC-016; source_url=https://www.centene.com/
 
 - NC-025 MAXIMUS: employer=Maximus; rule=NC-016; source_url=https://www.maximus.com/
 
-- NC-026 KAISER: employer=Kaiser; rule=NC-016; source_url=https://about.kaiserpermanente.org/
+- NC-026 KAISER: employer=Kaiser Permanente; rule=NC-016; source_url=https://about.kaiserpermanente.org/
 
 - NC-027 CARESTAR: employer=CareStar; rule=NC-016; source_url=https://www.carestar.com/
 
@@ -588,7 +588,7 @@ AUTHORITY=Tim 2026-11-01: Make the fast relevance screen live and resume intake;
 - Adds a logged discovery-only FUNCTION_MISMATCH outcome to the discovery accounting contract. It does not decline a canonical job, override a Tim decision, or create a company-wide exclusion.
 - Close a source candidate only when its sourced title matches a published mismatch term and has no explicit manufacturing, production, plant, factory, assembly, industrialization, NPI or process-engineering context. Record exact source, title, matched term, rule ID and policy revision; preserve the evidence and every original request fence. Existing canonical matches take precedence; protected jobs remain protected.
 - Approved mismatch terms are only the original seven groups in forge-coordination reports/FUNCTION_MISMATCH_BACKTEST_20261101.json: tax; clinical/patient care; food service; claims; retail store; public safety; software-only. Each had zero observed false closures among 576 known applied/pursued-or-later jobs. Exploratory data-center, HR, sales/marketing and finance groups are not enabled. Software titles with hardware, embedded, controls, robotics, firmware or mechatronics context remain reviewable.
-- Manager/Senior Manager, recruiter/agency, hidden client, absent pay, and estimated pay are never terminal screen reasons. Geography is never a terminal screen reason except under NC-013: New York, Pennsylvania and the upper Northeast corner of the US are never considered, except remote or multi-location roles. Never-Consider remains the Writer's sourced primary-business decision under existing rules.
+- Manager/Senior Manager, recruiter/agency, hidden client, absent pay, and estimated pay are never terminal screen reasons. Geography is never a terminal screen reason except under NC-013 (states listed there), remote or multi-location roles exempt. Never-Consider remains the Writer's sourced primary-business decision under existing rules.
 - Plausible target-function jobs pass to ordinary Writer admission. Unclear cards remain visibly ranked in discovery; use at most one targeted lookup for a decision-changing fact, then retain the unresolved item without blocking independent work. Reuse saved posting/card evidence and shared employer facts before research. No repeated Claude preparation.
 - No WIP limits, daily admission quotas or application-target processing caps. Transaction payload sizes, platform limits, locks, verification and idempotency safeguards remain required; continue successive batches while eligible work and execution capacity are available.
 - A subsequently applied/pursued job matching a closure term disables that term for future closures and reopens its discovery-only closed candidates for review, without resurrecting canonical protected decisions.
