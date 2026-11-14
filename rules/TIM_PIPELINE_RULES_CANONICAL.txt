@@ -79,6 +79,24 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 
 - NC-006 PROPERTY_MANAGEMENT_ROLES: exclude roles whose primary function is residential or commercial real-estate property management, including rental/community management, leasing operations, tenant services, and real-estate portfolio management. Do not classify manufacturing plant facilities, industrial maintenance, plant operations, or manufacturing engineering leadership as property management solely because they manage a site, building, equipment, or capital assets.
 
+- NC-007 PROCESS_INDUSTRY: Exclude employers whose PRIMARY business is process-industry bulk chemical production, refining, or raw-material production. Apply this employer-business rule consistently in discovery, manual and automated intake, enrichment, scoring, ranking, recommendations and resurfacing. Do not exclude discrete manufacturing such as stamping, molding or machining merely because it processes materials. Do not exclude industrial suppliers, diversified manufacturers, automation firms, component suppliers or equipment makers solely because they serve an excluded industry. Generic job-title, product, customer or materials keywords are not employer-primary-business evidence. Ruling TIM-20261112-PROCESS-INDUSTRY.
+
+- NC-008 HEALTHCARE_SERVICES: Exclude employers whose PRIMARY business is medical/healthcare services, hospitals, healthcare delivery, diagnostics or therapeutic healthcare products and services. This rule applies consistently in discovery, manual and automated intake, enrichment, scoring, ranking, recommendations, resurfacing, and every other active pipeline lane. Do not exclude diversified industrial manufacturers, automation firms, component suppliers or industrial equipment makers solely because healthcare organizations buy their products. For recruiting agencies, use the identified CLIENT employer's primary business; when the client is unknown, mark REVIEW_NEEDED rather than assume. Ruling ASK-20261023-CLAUDE-1312. Pharmaceuticals remain NC-001 and medical-device development or manufacturing remains NC-002.
+
+- NC-009 ABBVIE: employer=AbbVie; rule=NC-001; source_url=https://investors.abbvie.com/
+
+- NC-010 AMGEN: employer=Amgen; rule=NC-001; source_url=https://www.amgen.com/about
+
+- NC-011 STRYKER: employer=Stryker; rule=NC-002; source_url=https://www.stryker.com/us/en/about.html
+
+- NC-012 MEDTRONIC: employer=Medtronic; rule=NC-002; source_url=https://www.medtronic.com/no-nn/about.html
+
+- NC-013 NY_PA_NORTHEAST: New York, Pennsylvania and the upper Northeast corner of the US are never considered, except remote or multi-location roles. Tim 2026-11-06.
+
+- NC-014 NON_ENGLISH: non-English postings are never considered. Tim 2026-10-18.
+
+- Excluded role families are NC-005 FINANCIAL_AND_ACCOUNTING_ROLES and NC-006 PROPERTY_MANAGEMENT_ROLES (Tim 2026-11-06). This section rules no other excluded role family.
+
 - NC-005 and NC-006 were authorized by Tim on 2026-11-06. Use source-bound title and responsibility evidence, not employer-name keywords alone; ambiguous role scope remains review-needed. Apply these role exclusions to discovery and captured backlog review, manual and automated intake, enrichment, ranking, recommendations and resurfacing. Record the matching RULE_ID and individual identity/evidence even when researching a batch. Existing active matching rows require an authorized Writer disposition; preserve historical rows, applications, rejections, Tim decisions and protected states. This policy edit itself does not change any canonical job row or establish that a backlog item has been processed.
 
 - Do not apply NC rules merely because an industrial supplier, equipment maker, automation/integration firm, software vendor, logistics provider, component supplier, consulting firm, or engineering firm serves one of those industries.
@@ -90,7 +108,6 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 - Existing master rows are never deleted merely because an NC rule later applies.
 
 - Only Tim may activate, retire, edit, or override a Never-Consider category. Preserve retired RULE_IDs for historical metrics.
-- Company-business exclusion list: rules/COMPANY_BUSINESS_EXCLUSIONS.csv
 
 SECTION=GLOBAL_PHARMA_MEDICAL_EXCLUSION
 RULING_ID=ASK-20261023-CLAUDE-1312
@@ -280,7 +297,7 @@ SECTION=DECLINE_RULES
 
 - Every new DECLINED_BY_TIM decision requires DECLINE_REASON_CODE, DECLINE_REASON_TEXT, and REOPEN_TRIGGER.
 
-- Allowed reason codes: PAY_BELOW_FLOOR, GEOGRAPHY_GATE_FAIL, FLEX_STRICT_NO, SCOPE_BELOW_TARGET, FIT_TOO_WEAK, DOMAIN_MISMATCH, LOCATION_NOT_ACCEPTABLE, TIM_EXPLICIT_DECLINE, MULTIPLE_RULE_FAILURES.
+- Allowed reason codes: PAY_BELOW_FLOOR, GEOGRAPHY_GATE_FAIL, FLEX_STRICT_NO, SCOPE_BELOW_TARGET, FIT_TOO_WEAK, DOMAIN_MISMATCH, LOCATION_NOT_ACCEPTABLE, TIM_EXPLICIT_DECLINE, MULTIPLE_RULE_FAILURES, NEVER_CONSIDER.
 
 - LEGACY_REASON_NEEDS_NORMALIZATION is migration-only and must never be used for a new decision.
 
@@ -543,7 +560,7 @@ AUTHORITY=Tim 2026-11-01: Make the fast relevance screen live and resume intake;
 - Adds a logged discovery-only FUNCTION_MISMATCH outcome to the discovery accounting contract. It does not decline a canonical job, override a Tim decision, or create a company-wide exclusion.
 - Close a source candidate only when its sourced title matches a published mismatch term and has no explicit manufacturing, production, plant, factory, assembly, industrialization, NPI or process-engineering context. Record exact source, title, matched term, rule ID and policy revision; preserve the evidence and every original request fence. Existing canonical matches take precedence; protected jobs remain protected.
 - Approved mismatch terms are only the original seven groups in forge-coordination reports/FUNCTION_MISMATCH_BACKTEST_20261101.json: tax; clinical/patient care; food service; claims; retail store; public safety; software-only. Each had zero observed false closures among 576 known applied/pursued-or-later jobs. Exploratory data-center, HR, sales/marketing and finance groups are not enabled. Software titles with hardware, embedded, controls, robotics, firmware or mechatronics context remain reviewable.
-- Manager/Senior Manager, recruiter/agency, hidden client, geography, absent pay, and estimated pay are never terminal screen reasons. Never-Consider remains the Writer's sourced primary-business decision under existing rules.
+- Manager/Senior Manager, recruiter/agency, hidden client, absent pay, and estimated pay are never terminal screen reasons. Geography is never a terminal screen reason except under NC-013: New York, Pennsylvania and the upper Northeast corner of the US are never considered, except remote or multi-location roles. Never-Consider remains the Writer's sourced primary-business decision under existing rules.
 - Plausible target-function jobs pass to ordinary Writer admission. Unclear cards remain visibly ranked in discovery; use at most one targeted lookup for a decision-changing fact, then retain the unresolved item without blocking independent work. Reuse saved posting/card evidence and shared employer facts before research. No repeated Claude preparation.
 - No WIP limits, daily admission quotas or application-target processing caps. Transaction payload sizes, platform limits, locks, verification and idempotency safeguards remain required; continue successive batches while eligible work and execution capacity are available.
 - A subsequently applied/pursued job matching a closure term disables that term for future closures and reopens its discovery-only closed candidates for review, without resurrecting canonical protected decisions.
