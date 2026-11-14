@@ -105,7 +105,7 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 
 - NC-019 PROGRAM_PROJECT_MANAGEMENT: Program/project management titles. ruling=TIM-20261114 (Root declined-jobs review).
 
-- NC-020 IC_ENGINEER: titles containing "Engineer" with no manager or leadership level. ruling=TIM-20261114 (Root declined-jobs review).
+- NC-020 IC_ENGINEER: titles containing "Engineer" with no manager or leadership level. Titles containing "Staff Engineer" or "Principal Engineer" are exempt and must never be declined by that rule. This covers Staff, Senior Staff and Principal. ruling=TIM-20261114 (Root declined-jobs review).
 
 - NC-021 FIRST_LINE: the titles Supervisor, Group Leader and Associate Manager only. ruling=TIM-20261114 (Root declined-jobs review).
 
