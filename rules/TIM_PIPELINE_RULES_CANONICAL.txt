@@ -95,7 +95,9 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 
 - NC-014 NON_ENGLISH: non-English postings are never considered. Tim 2026-10-18.
 
-- Excluded role families are NC-005 FINANCIAL_AND_ACCOUNTING_ROLES and NC-006 PROPERTY_MANAGEMENT_ROLES (Tim 2026-11-06). This section rules no other excluded role family.
+- NC-015 ROLE_FAMILIES: exclude roles whose primary function is sales, HR, IT/software, R&D, product design, field service/support, supply chain, logistics, warehouse, yard, retail, dealership, or reconditioning. Apply to the actual role and title regardless of employer industry. Do not classify manufacturing plant operations, industrial maintenance, or manufacturing engineering leadership as one of these roles solely because they use software, support a product, move material, or manage a yard, warehouse, or site. Tim standing instruction, recorded Nov 11, 2026.
+
+- Excluded role families are NC-005 FINANCIAL_AND_ACCOUNTING_ROLES and NC-006 PROPERTY_MANAGEMENT_ROLES (Tim 2026-11-06) and NC-015 ROLE_FAMILIES (Tim standing instruction, recorded Nov 11, 2026).
 
 - NC-005 and NC-006 were authorized by Tim on 2026-11-06. Use source-bound title and responsibility evidence, not employer-name keywords alone; ambiguous role scope remains review-needed. Apply these role exclusions to discovery and captured backlog review, manual and automated intake, enrichment, ranking, recommendations and resurfacing. Record the matching RULE_ID and individual identity/evidence even when researching a batch. Existing active matching rows require an authorized Writer disposition; preserve historical rows, applications, rejections, Tim decisions and protected states. This policy edit itself does not change any canonical job row or establish that a backlog item has been processed.
 
