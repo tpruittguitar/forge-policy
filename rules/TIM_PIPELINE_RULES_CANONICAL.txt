@@ -90,6 +90,7 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 - Existing master rows are never deleted merely because an NC rule later applies.
 
 - Only Tim may activate, retire, edit, or override a Never-Consider category. Preserve retired RULE_IDs for historical metrics.
+- Company-business exclusion list: rules/COMPANY_BUSINESS_EXCLUSIONS.csv
 
 SECTION=GLOBAL_PHARMA_MEDICAL_EXCLUSION
 RULING_ID=ASK-20261023-CLAUDE-1312
