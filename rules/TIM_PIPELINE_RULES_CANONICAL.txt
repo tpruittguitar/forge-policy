@@ -47,6 +47,8 @@ SECTION=DISCOVERY_ADMISSION
 
 - Unknown or incomplete compensation, FLEX, exact req ID, scope, reporting line, work arrangement, or first-party URL is a research state, not an exclusion reason.
 
+- Work arrangement default (Tim, 2026-11-22 ET; all Forge lanes, including Hermes): When the exact job posting is readable and gives no explicit Remote, Hybrid, or other affirmative work arrangement, record On-site unless a verified arrangement already exists. Explicit or verified evidence takes precedence; preserve conflicting evidence and leave unresolved conflicts unresolved. Never fabricate an employer quote for posting silence. Posting silence alone cannot trigger a hard geography exclusion, change a protected decision, or authorize a master backfill. Existing Writer and transport rules are unchanged.
+
 - LinkedIn and other credible job-board/aggregator JD text may establish a real role and may be used as the working JD with provenance.
 
 - First-party ATS is primarily a liveness/correction source, not a discovery gate.
