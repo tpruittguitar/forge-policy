@@ -47,6 +47,8 @@ SECTION=DISCOVERY_ADMISSION
 
 - Unknown or incomplete compensation, FLEX, exact req ID, scope, reporting line, work arrangement, or first-party URL is a research state, not an exclusion reason.
 
+- Work arrangement inference (Tim, 2026-11-22 ET; all Forge lanes, including Hermes): When the exact job posting has been read and is silent about work arrangement, use ON-SITE (assumed; posting silent) for provisional research and notes. Explicit Remote, Hybrid, On-site, or another affirmative arrangement and existing verified facts take precedence. Preserve conflicting evidence and leave the inference unresolved. An assumption is not employer-confirmed worksite evidence: do not use it to trigger geography exclusions, change protected decisions, or backfill the master. If the established Writer path records the assumption, set WORK_ARRANGEMENT_NOTE to Assumed on-site; posting silent, and leave WORK_ARRANGEMENT_EVIDENCE_QUOTE blank. Never fabricate a quote. Existing Writer and transport rules are unchanged.
+
 - LinkedIn and other credible job-board/aggregator JD text may establish a real role and may be used as the working JD with provenance.
 
 - First-party ATS is primarily a liveness/correction source, not a discovery gate.
