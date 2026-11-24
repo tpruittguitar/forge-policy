@@ -123,9 +123,13 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 
 - NC-028 UNITED_VEIN_VASCULAR: employer=United Vein & Vascular Centers; rule=NC-008; source_url=https://unitedveincenters.com/
 
+- NC-029 LAW_FIRMS_AND_LEGAL_SERVICES: exclude before intake only when the employer's core business is a law firm, trial practice, or legal services firm. Do not exclude manufacturers, industrial suppliers, automation firms, or other employers solely because they have an in-house legal department or mention legal, regulatory, quality, or compliance functions. Tim, Hermes chat, recorded Nov 24, 2026. employer_business_any=law firm|law firms|legal services|legal service|trial lawyer|trial lawyers|lawyers|law office|law offices|legal practice|attorney at law|attorneys at law; employer_business_exempt=manufacturing|manufacturer|equipment|automation|supplier|component|software|recruiting|staffing
+
+- NC-030 LEGAL_ROLES: exclude roles whose primary function is the practice of law or legal operations, including attorney, counsel, paralegal, and legal operations. Apply to the actual role and title regardless of employer industry. Do not classify manufacturing quality, regulatory, or compliance roles as legal roles solely because those functions touch regulations or policies. Whole-word title matches only: counsel does not match counseling or counselor; legal does not match regulatory, compliance, or quality. Tim, Hermes chat, recorded Nov 24, 2026. title_any=attorney|counsel|paralegal|legal operations|lawyer|legal ops|legal
+
 - BioSpace hidden-client rows go to REVIEW_NEEDED, not EXCLUDE. ruling=TIM-20261114 (Root declined-jobs review).
 
-- Excluded role families are NC-005 FINANCIAL_AND_ACCOUNTING_ROLES and NC-006 PROPERTY_MANAGEMENT_ROLES (Tim 2026-11-06) and NC-015 ROLE_FAMILIES (Tim standing instruction, recorded Nov 11, 2026).
+- Excluded role families are NC-005 FINANCIAL_AND_ACCOUNTING_ROLES and NC-006 PROPERTY_MANAGEMENT_ROLES (Tim 2026-11-06) and NC-015 ROLE_FAMILIES (Tim standing instruction, recorded Nov 11, 2026) and NC-030 LEGAL_ROLES (Tim, Hermes chat, recorded Nov 24, 2026). NC-029 LAW_FIRMS_AND_LEGAL_SERVICES is the companion employer-business rule.
 
 - NC-005 and NC-006 were authorized by Tim on 2026-11-06. Use source-bound title and responsibility evidence, not employer-name keywords alone; ambiguous role scope remains review-needed. Apply these role exclusions to discovery and captured backlog review, manual and automated intake, enrichment, ranking, recommendations and resurfacing. Record the matching RULE_ID and individual identity/evidence even when researching a batch. Existing active matching rows require an authorized Writer disposition; preserve historical rows, applications, rejections, Tim decisions and protected states. This policy edit itself does not change any canonical job row or establish that a backlog item has been processed.
 
