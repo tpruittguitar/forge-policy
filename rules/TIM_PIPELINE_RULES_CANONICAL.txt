@@ -127,6 +127,8 @@ UNKNOWN_RULE=Ambiguous classification is admitted for review; uncertainty is nev
 
 - NC-030 LEGAL_ROLES: exclude roles whose primary function is the practice of law or legal operations, including attorney, counsel, paralegal, and legal operations. Apply to the actual role and title regardless of employer industry. Do not classify manufacturing quality, regulatory, or compliance roles as legal roles solely because those functions touch regulations or policies. Whole-word title matches only: counsel does not match counseling or counselor; legal does not match regulatory, compliance, or quality. Tim, Hermes chat, recorded Nov 24, 2026. title_any=attorney|counsel|paralegal|legal operations|lawyer|legal ops|legal
 
+- NC-031 INDUSTRIAL_GAS_PRODUCERS_AND_DISTRIBUTORS: exclude before intake only when the employer's core business is industrial gas production or distribution, including MATHESON (Matheson Tri-Gas), Linde, Air Products and Airgas. Do not exclude employers solely because they buy or use industrial gases, supply equipment to gas producers, or have Air in their name. Tim approval via President, Forge card cs-49e953a1. employer_business_any=industrial gas production|industrial gas distribution|industrial gas producer|industrial gas producers|industrial gas distributor|industrial gas distributors
+
 - BioSpace hidden-client rows go to REVIEW_NEEDED, not EXCLUDE. ruling=TIM-20261114 (Root declined-jobs review).
 
 - Excluded role families are NC-005 FINANCIAL_AND_ACCOUNTING_ROLES and NC-006 PROPERTY_MANAGEMENT_ROLES (Tim 2026-11-06) and NC-015 ROLE_FAMILIES (Tim standing instruction, recorded Nov 11, 2026) and NC-030 LEGAL_ROLES (Tim, Hermes chat, recorded Nov 24, 2026). NC-029 LAW_FIRMS_AND_LEGAL_SERVICES is the companion employer-business rule.
